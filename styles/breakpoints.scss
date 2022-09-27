@@ -1,0 +1,69 @@
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1200px,
+);
+
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+// .boxes {
+//   .box:nth-child(3n) {
+//     @include xl {
+//       margin-right: 30;
+//     }
+//   }
+
+  // .box:nth-child(4n) {
+  //   @include xl {
+  //     margin-right: 0;
+  //   }
+  // }
+
+//   .box:nth-child(3n) {
+//     @include lg {
+//       margin-right: 0;
+//     }
+//   }
+
+  // .box:nth-child(4n) {
+  //   @include lg {
+  //     margin-right: 0;
+  //   }
+  // }
+
+//   .box:nth-child(3n) {
+//     @include md {
+//       margin-right: 30;
+//     }
+//   }
+
+//   .box:nth-child(4n) {
+//     @include md {
+//       margin-right: 0;
+//     }
+//   }
+// }

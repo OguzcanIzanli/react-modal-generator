@@ -1,0 +1,229 @@
+// BACKGROUND
+
+.theme {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+
+  .firstBackground {
+    background: linear-gradient(to bottom, #ffffff 0%, #e3f2f7 100%);
+    height: 910px;
+  }
+
+  .secondBackground {
+    background: rgba(102, 102, 102, 1);
+    height: 630px;
+  }
+}
+
+.container {
+  max-width: 1194px;
+  min-width: 760px;
+  margin: auto;
+  position: relative;
+  padding: 0 10px;
+
+  // NAVBAR - START
+  .navBar {
+    width: 100%;
+    margin-top: 23px;
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.03em;
+    color: #000000;
+
+    div {
+      display: flex;
+      height: 36px;
+
+      .homeButton {
+        font-weight: 800;
+        margin-left: 10px;
+      }
+
+      .homeButton:hover {
+        color: #000000;
+        opacity: 0.7;
+      }
+    }
+
+    button:hover {
+      color: rgb(50, 121, 247);
+    }
+
+    .navList {
+      button {
+        margin-left: 30px;
+        padding: 5px;
+      }
+
+      button:first-child {
+        margin-left: 0px;
+      }
+    }
+
+    .navLastList {
+      .tryButton {
+        background-color: rgba(125, 74, 234, 1);
+        color: #ffffff;
+        height: 36px;
+        width: 121px;
+        border-radius: 12px;
+        margin-left: 30px;
+        box-shadow: 0px 5px 10px 2px rgba(125, 74, 234, 0.27);
+      }
+
+      .tryButton:hover {
+        background-color: rgba(125, 24, 234, 1);
+      }
+    }
+  }
+  // NAVBAR - END
+
+  // HERO - START
+  .hero {
+    h1 {
+      margin-top: 90px;
+      width: 486px;
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 80px;
+      letter-spacing: -0.03em;
+      color: #000000;
+    }
+
+    p {
+      margin-top: 20px;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 44px;
+      letter-spacing: -0.015em;
+      color: #000000;
+    }
+
+    button {
+      margin-top: 60px;
+      background-color: rgba(125, 74, 234, 1);
+      color: #ffffff;
+      height: 60px;
+      width: 171px;
+      border-radius: 12px;
+      box-shadow: 0px 5px 10px 2px rgba(125, 74, 234, 0.27);
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .heroAdvantages {
+      display: flex;
+      margin-top: 40px;
+
+      span {
+        display: flex;
+        margin-right: 25px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: #000000;
+        opacity: 0.8;
+
+        span {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+  .moreAdvantages {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 678px;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+
+    div {
+      h1 {
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 80px;
+      }
+
+      p {
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        width: 115px;
+      }
+
+      h2 {
+        width: 344px;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: -0.015em;
+      }
+    }
+  }
+  // HERO - END
+
+  // MODAL CARD SELECTOR - START
+  .modalCardGenerator {
+    margin-top: 220px;
+    color: #000000;
+
+    h1 {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 48px;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin-top: 15px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.015em;
+      width: 460px;
+    }
+
+    .selectionStep {
+      display: flex;
+      align-items: center;
+      color: #000000;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin-top: 90px;
+
+      div {
+        height: 36px;
+        width: 36px;
+        border-radius: 0px;
+        background: #eaeaea;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      h2 {
+        margin-left: 15px;
+        font-size: 18px;
+        line-height: 36px;  
+      }
+    }
+  }
+  // MODAL CARD SELECTOR - START
+  .slider {
+    width: 500px;
+    height: 500px;
+  }
+}

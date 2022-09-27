@@ -1,0 +1,196 @@
+$default-position-left: 0px;
+$default-position-top: 683px;
+$default-font-size: 18px;
+$default-background-color: #000000;
+
+$container-width: 800px;
+$container-height: 468px;
+
+.container {
+  width: $container-width;
+  height: $container-height;
+  position: absolute;
+  left: $default-position-left;
+  top: $default-position-top;
+  border-radius: 15px;
+  text-align: center;
+  background-color: white;
+  display: flex;
+
+  .closeButtonSquare {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    width: 34px;
+    height: 34px;
+
+    .closeButton {
+      font-size: 34px;
+      color: #000000;
+      opacity: 0.4;
+    }
+
+    .closeButton:hover {
+      opacity: 0.6;
+      transition: 0.3s;
+    }
+  }
+
+  .col6 {
+    width: calc($container-width/2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .col12 {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      align-items: center;
+
+      h1 {
+        margin-top: 32px;
+        font-size: calc($default-font-size + 22px);
+        font-weight: 700;
+        line-height: 54px;
+        letter-spacing: -0.03em;
+      }
+
+      h2 {
+        width: 280px;
+        margin-top: 10px;
+        font-size: calc($default-font-size);
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+
+        span {
+          text-decoration-line: underline;
+          font-weight: 600;
+        }
+      }
+
+      form {
+        margin-top: 30px;
+
+        button {
+          height: 48px;
+          width: 300px;
+          border: 1px solid rgba(210, 218, 227, 1);
+          border-radius: 12px;
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0em;
+          color: #000000;
+        }
+
+        input {
+          height: 48px;
+          width: 300px;
+          border: 1px solid rgba(187, 187, 187, 1);
+          background: #ffffff;
+          border: 1px solid #bbbbbb;
+          border-radius: 12px;
+          padding: 12px;
+        }
+
+        input:hover {
+          background: rgb(248, 248, 248);
+          transition: 0.3s;
+          box-shadow: 1px 1px 8px #e8e8e8;
+        }
+
+        .button2 {
+          background: $default-background-color;
+          margin-top: 15px;
+          color: #ffffff;
+        }
+
+        .button2:hover {
+          transition: 0.3s;
+          opacity: 0.8;
+          box-shadow: 1px 1px 8px #cacaca;
+        }
+      }
+
+      h3 {
+        text-align: left;
+        margin-right: 50px;
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #777777;
+
+        a {
+          text-decoration-line: underline;
+        }
+      }
+    }
+
+    img {
+      object-fit: cover;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .bolt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 106px;
+    right: -123px;
+    background: #ffffff;
+    border-radius: 12px;
+    height: 48px;
+    width: 182px;
+    border-radius: 12px;
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: #000000;
+
+    span {
+      display: flex;
+      margin-right: 12px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.015em;
+      color: #000000;
+    }
+  }
+
+  .cost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 164px;
+    right: -195px;
+    background: #ffffff;
+    border-radius: 12px;
+    height: 48px;
+    width: 269px;
+    border-radius: 12px;
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: #000000;
+
+    span {
+      display: flex;
+      margin-right: 12px;
+
+    }
+  }
+}
