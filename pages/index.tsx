@@ -1,127 +1,41 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import { ToDoType } from "../types";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Template0 from "./template0";
-import Selector from "./selector";
+
+import Template_0 from "./template_0";
+import Navbar from "../Components/navbar";
+import Hero from "../Components/hero";
+import Selector from "../Components/selector";
 
 const Home = () => {
   return (
-    // THEME
     <div>
       <Head>
-        <title>Modal Generator</title>
+        <title>Modal Card Creator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/home.svg" />
       </Head>
 
+      {/* THEME */}
       <div className={styles.theme}>
         <div className={styles.firstBackground}></div>
         <div className={styles.secondBackground}></div>
       </div>
 
+      {/* CONTAINER - START */}
       <div className={styles.container}>
-        <Template0 />
+        {/* EXAMPLE MODAL */}
+        <Template_0 />
 
         {/* // NAVBAR */}
-        <div className={styles.navBar}>
-          <div>
-            <button>
-              <Image src="/home.svg" width={36} height={36} />
-            </button>
-            <button className={styles.homeButton}>modal.cards</button>
-          </div>
-
-          <form className={styles.navList}>
-            <button>Solutions</button>
-            <button>Product Tour</button>
-            <button>Showcase</button>
-            <button>Pricing</button>
-          </form>
-
-          <form className={styles.navLastList}>
-            <button>Sign in</button>
-            <button className={styles.tryButton}>Try for free</button>
-          </form>
-        </div>
+        <Navbar />
 
         {/* HERO */}
-        <div className={styles.hero}>
-          <h1>Simple modal card creator</h1>
+        <Hero />
 
-          <p>
-            A utility-first CSS framework packed with classeslike flex, pt-4,
-            text-center and rotate-90 that can becomposed to build any design,
-            directly in your markup.
-          </p>
-
-          <button>Try it out now</button>
-
-          {/* HERO ADVANTAGES*/}
-          <div className={styles.heroAdvantages}>
-            <span>
-              <span>
-                <Image src="/check.svg" width={16} height={16} />
-              </span>
-              Free and paid plans
-            </span>
-            <span>
-              <span>
-                <Image src="/check.svg" width={16} height={16} />
-              </span>
-              Setup in minutes
-            </span>
-            <span>
-              <span>
-                <Image src="/check.svg" width={16} height={16} />
-              </span>
-              No credit card required*
-            </span>
-          </div>
-        </div>
-
-        <div className={styles.moreAdvantages}>
-          <div>
-            <h1>3x</h1>
-            <p>Increase Conversion Rate</p>
-          </div>
-
-          <div>
-            <h1>120%</h1>
-            <p>Email Subscribers</p>
-          </div>
-
-          <div>
-            <h1>390%</h1>
-            <p>More Customer Engagement</p>
-          </div>
-
-          <div>
-            <h2>Popupsmart meets all your business needs.</h2>
-          </div>
-        </div>
-
-        {/* MODAL SELECTOR */}
-        <div className={styles.modalCardGenerator}>
-          <div>
-            <h1>Modal Card Generator</h1>
-
-            <p>
-              Measure your return on email marketing efforts easier and faster
-              by using thebest online tools. Popupsmart is ready to help you
-              build an efficient email list!
-            </p>
-          </div>
-
-          <div className={styles.selectionStep}>
-            <div>1</div>
-            <h2>Choose your template</h2>
-          </div>
-        </div>
+        {/* TEMPLATE SELECTOR AND CUSTOMIZE */}
         <Selector />
       </div>
+      {/* CONTAINER - END */}
     </div>
   );
 };

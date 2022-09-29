@@ -1,4 +1,4 @@
-import styles from "../styles/template0.module.scss";
+import styles from "../styles/template_0.module.scss";
 import Image from "next/image";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import Link from "next/link";

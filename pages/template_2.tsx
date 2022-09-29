@@ -1,8 +1,8 @@
-import styles from "../styles/template1.module.scss";
+import styles from "../styles/template_2.module.scss";
 import Image from "next/image";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
-function Template1() {
+function Template_2() {
   return (
     <div className={styles.container}>
       <div className={styles.closeButtonSquare}>
@@ -11,22 +11,18 @@ function Template1() {
         </button>
       </div>
 
-      <div className={styles.ellipse}>
-        <Image src="/star.svg" width={36} height={44} />
-      </div>
+      <Image src="/img1.png" width={480} height={300} />
 
-      <h1>Security Code</h1>
+      <h1>Install Local Now</h1>
 
-      <h2>This code expires in 24 hours</h2>
-
-      <p>Code</p>
+      <h2>We’ve gone native, try it!</h2>
 
       <form>
-        <button className={styles.button1}>Cancel</button>
         <button className={styles.button2}>Continue</button>
+        <button className={styles.button1}>Not now</button>
       </form>
     </div>
   );
 }
 
-export default Template1;
+export default Template_2;

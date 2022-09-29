@@ -1,0 +1,61 @@
+.navBar {
+  height: 36px;
+  width: 100%;
+  margin-top: 23px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  color: #000000;
+
+  div {
+    height: 36px;
+    display: flex;
+
+    .homeButton {
+      margin-left: 10px;
+      font-weight: 800;
+    }
+
+    .homeButton:hover {
+      color: #000000;
+      opacity: 0.7;
+    }
+  }
+
+  button:hover {
+    color: rgb(50, 121, 247);
+  }
+
+  .navList {
+    button {
+      margin-left: 30px;
+      padding: 5px;
+    }
+
+    button:first-child {
+      margin-left: 0px;
+    }
+  }
+
+  .navLastList {
+    .tryFreeButton {
+      height: 36px;
+      width: 121px;
+      margin-left: 30px;
+
+      background-color: rgba(125, 74, 234, 1);
+      color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0px 5px 10px 2px rgba(125, 74, 234, 0.27);
+    }
+
+    .tryFreeButton:hover {
+      background-color: rgba(125, 24, 234, 1);
+    }
+  }
+}

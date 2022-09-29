@@ -1,12 +1,68 @@
-// @import "breakpoints";
+// MODAL CARD GENERATOR - START
+.modalCardGenerator {
+  margin-top: 220px;
 
-.boxes {
+  color: #000000;
+
+  h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    width: 460px;
+    margin-top: 15px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+  }
+
+  .selectionTitle {
+    margin-top: 90px;
+
+    display: flex;
+    align-items: center;
+
+    letter-spacing: -0.03em;
+    font-weight: 700;
+
+    div {
+      height: 36px;
+      width: 36px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 0px;
+      background: #eaeaea;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    h2 {
+      margin-left: 15px;
+
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+}
+// MODAL CARD GENERATOR - END
+
+// MODAL CARD MAPPING AND SELECTION - START
+.cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 30px;
 
-  .box {
+  .card {
     height: 200px;
     width: 276px;
     border: 1px solid rgba(234, 234, 234, 1);
@@ -19,7 +75,7 @@
     align-items: center;
     justify-content: center;
 
-    .selectBox {
+    .selectCard {
       position: absolute;
       height: 200px;
       width: 276px;
@@ -48,7 +104,7 @@
       }
     }
 
-    .selectBox:hover {
+    .selectCard:hover {
       background-color: rgba(125, 74, 234, 0.6);
 
       .selectButton {
@@ -60,29 +116,35 @@
     }
   }
 }
+// MODAL CARD MAPPING AND SELECTION - END
 
-.pageButtons {
+// MODAL CARD PAGE BUTTONS - START
+.cardPageButtons {
   height: 48px;
   width: 132px;
-  border-radius: 12px;
-  background: #f5f5f5;
-  border-radius: 12px;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
 
+  border-radius: 12px;
+  background: #f5f5f5;
+  border-radius: 12px;
+
   button {
+    margin: 5px 0px;
+    padding: 10px 15px;
+
     font-weight: 600;
     font-size: 14px;
     color: #777777;
-    margin: 5px 0px;
-    padding: 10px 15px;
   }
 
-  .clicked {
+  .cardPageButtonClicked {
     background: #ffffff;
     border-radius: 10px;
     transition: 0.5s;
     color: #000000;
   }
 }
+// MODAL CARD PAGE BUTTONS - END
