@@ -73,7 +73,7 @@ function selector() {
           </button>
         </div>
 
-         {/* CUSTOMIZED TEMPLATE EXAMPLE */}
+        {/* CUSTOMIZED TEMPLATE EXAMPLE */}
         <Customize template={template} />
       </div>
     </>

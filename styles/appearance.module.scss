@@ -1,0 +1,207 @@
+.appearance {
+  .titleContainer {
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+
+    .titleNumber {
+      height: 36px;
+      width: 36px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #eaeaea;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .title {
+      margin-left: 15px;
+
+      font-size: 18px;
+      line-height: 36px;
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .subTitles {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+  }
+
+  // FONT SIZE
+  .sizeButtonsContainer {
+    height: 48px;
+    width: 257px;
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 12px;
+    background: #f5f5f5;
+    border-radius: 12px;
+
+    button {
+      margin: 5px 0px;
+      padding: 10px 15px;
+
+      font-weight: 700;
+      font-size: 14px;
+      color: #777777;
+      line-height: 18px;
+    }
+
+    .fontSizeSelectClicked {
+      background: #ffffff;
+      border-radius: 10px;
+      transition: 0.5s;
+      color: #000000;
+    }
+  }
+
+  // MODAL POSITION
+  .positionButtonsContainer {
+    height: 55px;
+    width: 82px;
+    margin-top: 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    Button {
+      height: 15px;
+      width: 24px;
+
+      background: #ffffff;
+      border: 2px solid #cbcbcb;
+    }
+
+    .positionSelectClicked {
+      background: #7d4aea;
+      border-color: #7d4aea;
+    }
+
+    Button:nth-child(1) {
+      border-radius: 4px 0px 0px 0px;
+    }
+
+    Button:nth-child(3) {
+      border-radius: 0px 4px 0px 0px;
+    }
+
+    Button:nth-child(7) {
+      border-radius: 0px 0px 0px 4px;
+    }
+
+    Button:nth-child(9) {
+      border-radius: 0px 0px 4px 0px;
+    }
+  }
+
+  // COLOR
+  .colorButtonsContainer {
+    height: 42px;
+    width: 253px;
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+
+    Button {
+      height: 42px;
+      width: 42px;
+
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .colorSelectClicked {
+      box-shadow: 4px 4px 4px rgba(98, 98, 98, 0.3);
+    }
+
+    Button:nth-child(1) {
+      background: #000000;
+    }
+
+    Button:nth-child(2) {
+      background: #f37c34;
+    }
+
+    Button:nth-child(3) {
+      background: #777777;
+    }
+
+    Button:nth-child(4) {
+      background: #dddddd;
+    }
+
+    Button:nth-child(5) {
+      background: #ffffff;
+    }
+  }
+
+  // UPLOAD LOGO
+  .uploadBox {
+    height: 178px;
+    width: 378px;
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: #ffffff;
+    border: 1px dashed #dddddd;
+    border-radius: 12px;
+
+    .uploadLogoBox {
+      height: 80px;
+      width: 80px;
+
+      display: flex;
+      justify-content: center;
+
+      background: #7d4aea22;
+      border-radius: 12px;
+
+      img {
+        color: purple;
+      }
+    }
+
+    div {
+      margin-top: 20px;
+
+      display: flex;
+      p {
+        margin-top: 0;
+        margin-left: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: #000000;
+
+        span {
+          color: #7d4aea;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

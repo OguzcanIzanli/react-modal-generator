@@ -2,9 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 
 import Template_0 from "./template_0";
-import Navbar from "../Components/navbar";
-import Hero from "../Components/hero";
-import Selector from "../Components/selector";
+import Navbar from "./navbar";
+import Hero from "./hero";
+import Selector from "./selector";
 
 const Home = () => {
   return (

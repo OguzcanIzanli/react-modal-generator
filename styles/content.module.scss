@@ -1,0 +1,99 @@
+.content {
+  .titleContainer {
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+
+    .titleNumber {
+      height: 36px;
+      width: 36px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #eaeaea;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .title {
+      margin-left: 15px;
+
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+
+  .subTitles {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+  }
+
+  .contentInputContainer {
+    input {
+      height: 36px;
+      width: 378px;
+      margin-top: 15px;
+
+      background: #ffffff;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+    }
+
+    input:hover {
+      border: 1px solid #7d4aea;
+      box-shadow: 1px 1px 2px #7d4aea;
+    }
+
+    input:focus {
+      outline: max(2px) solid #7d4aea;
+      opacity: 0.5;
+    }
+
+    input:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .uploadBox {
+    height: 178px;
+    width: 378px;
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: #ffffff;
+    border: 1px dashed #dddddd;
+    border-radius: 12px;
+
+    div {
+      margin-top: 20px;
+
+      display: flex;
+      p {
+        margin-top: 0;
+        margin-left: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: #000000;
+
+        span {
+          color: #7d4aea;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

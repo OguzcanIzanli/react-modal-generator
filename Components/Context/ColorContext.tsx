@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { IColorContextProps } from "../types";
+import { IColorContextProps } from "../../pages/types";
 
 export const ColorContext = createContext<IColorContextProps>({
   color: {},

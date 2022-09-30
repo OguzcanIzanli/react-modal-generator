@@ -1,0 +1,31 @@
+.settingsandcode {
+  .titleContainer {
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+
+    .titleNumber {
+      height: 36px;
+      width: 36px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #eaeaea;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .title {
+      margin-left: 15px;
+
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+}

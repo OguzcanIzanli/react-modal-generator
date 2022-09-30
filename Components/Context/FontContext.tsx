@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { IFontSizeContextProps } from "../types";
+import { IFontSizeContextProps } from "../../pages/types";
 
 export const FontSizeContext = createContext<IFontSizeContextProps>({
   fontSize: {},
