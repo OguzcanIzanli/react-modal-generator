@@ -1,0 +1,172 @@
+.footer {
+  color: #000000;
+
+  .footerTitle {
+    margin-top: 90px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: -0.03em;
+  }
+
+  .appProperties {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    .appProperty {
+      height: 267px;
+      width: 378px;
+      border-radius: 12px;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      .propertyTitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 20px;
+      }
+
+      .property {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: -0.01em;
+        margin: 10px 70px;
+      }
+    }
+  }
+
+  .askedQuestions {
+    .askedQuestionsTitle {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 48px;
+      text-align: center;
+      letter-spacing: -0.03em;
+      margin-top: 120px;
+    }
+  }
+
+  .faq {
+    margin-top: 50px;
+
+    label {
+      cursor: pointer;
+      border-top: 1px solid #eaeaea;
+      border-bottom: 1px solid #eaeaea;
+
+      .dropdown {
+        border-top: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+        padding: 25px;
+        padding-bottom: 5px;
+
+        span {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: -0.01em;
+          cursor: pointer;
+        }
+
+        span::after {
+          float: right;
+          right: 10%;
+          content: "v";
+        }
+
+        input {
+          position: absolute;
+          opacity: 0;
+          height: 0px;
+        }
+
+        input:checked + .context {
+          height: 100px;
+        }
+      }
+
+      .context {
+        clear: both;
+        width: 840px;
+        height: 0px;
+        overflow: hidden;
+        transition: height 0.4s ease;
+        margin-top: 20px;
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 26px;
+
+        letter-spacing: -0.01em;
+      }
+    }
+  }
+
+  .appMoreProperties {
+    .appMorePropertiesTitle {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 48px;
+      text-align: center;
+      letter-spacing: -0.03em;
+      margin-top: 120px;
+    }
+    .appMorePropContainer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 70px;
+
+      .appMoreProp {
+        width: 200px;
+
+        .circle {
+          height: 120px;
+          width: 120px;
+          border-radius: 50%;
+          background: #7d4aea;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: auto;
+        }
+
+        .morePropTitle {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+          text-align: center;
+          margin-top: 30px;
+        }
+        .moreProp {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: -0.01em;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .popupsmart {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      color: #000000;
+    }
+
+    .smart {
+      margin-top: 15px;
+    }
+  }
+}

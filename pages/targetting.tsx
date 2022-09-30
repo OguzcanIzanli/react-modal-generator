@@ -1,7 +1,25 @@
+import { useState } from "react";
 import styles from "../styles/targetting.module.scss";
-import Checkbox from "./checkbox";
+import { BiDesktop, BiMobile } from "react-icons/bi";
 
 function Targetting() {
+  const [isCheckedDesktop, setIsCheckedDesktop] = useState(false);
+  const [isCheckedMobile, setIsCheckedMobile] = useState(false);
+
+  const handleOnChangeDesktop = () => {
+    setIsCheckedDesktop(!isCheckedDesktop);
+    if (isCheckedDesktop === false) {
+      setIsCheckedMobile(false);
+    }
+  };
+
+  const handleOnChangeMobile = () => {
+    setIsCheckedMobile(!isCheckedMobile);
+    if (isCheckedMobile === false) {
+      setIsCheckedDesktop(false);
+    }
+  };
+
   return (
     <div className={styles.targetting}>
       <div className={`${styles.titleContainer} mt-24`}>
@@ -17,7 +35,45 @@ function Targetting() {
           <label htmlFor="switch1">Toggle</label>
         </div>
 
-        <Checkbox />
+        <div className={styles.deviceBox}>
+          <div className={styles.checkbox}>
+            <div className={styles.topping}>
+              <input
+                type="checkbox"
+                // id="topping1"
+                // name="topping1"
+                value="Paneer"
+                checked={isCheckedDesktop}
+                onChange={handleOnChangeDesktop}
+              />
+
+              {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
+            </div>
+            <span>
+              <BiDesktop />
+            </span>
+            <p className={styles.p}>Desktop</p>
+          </div>
+
+          <div className={styles.checkbox}>
+            <div className={styles.topping}>
+              <input
+                type="checkbox"
+                // id="topping2"
+                // name="topping2"
+                value="Paneer"
+                checked={isCheckedMobile}
+                onChange={handleOnChangeMobile}
+              />
+
+              {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
+            </div>
+            <span>
+              <BiMobile />
+            </span>
+            <p className={styles.p}>Mobile</p>
+          </div>
+        </div>
       </div>
 
       {/* After X Seconds */}

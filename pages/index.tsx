@@ -5,6 +5,7 @@ import Template_0 from "./template_0";
 import Navbar from "./navbar";
 import Hero from "./hero";
 import Selector from "./selector";
+import Footer from "./footer";
 
 const Home = () => {
   return (
@@ -15,27 +16,21 @@ const Home = () => {
         <link rel="icon" href="/home.svg" />
       </Head>
 
-      {/* THEME */}
+      {/* Theme */}
       <div className={styles.theme}>
         <div className={styles.firstBackground}></div>
         <div className={styles.secondBackground}></div>
       </div>
 
-      {/* CONTAINER - START */}
+      {/* Container - Start */}
       <div className={styles.container}>
-        {/* EXAMPLE MODAL */}
-        <Template_0 />
-
-        {/* // NAVBAR */}
-        <Navbar />
-
-        {/* HERO */}
-        <Hero />
-
-        {/* TEMPLATE SELECTOR AND CUSTOMIZE */}
-        <Selector />
+        <Template_0 /> {/* Example Modal */}
+        <Navbar /> {/* Navbar */}
+        <Hero /> {/* Hero */}
+        <Selector /> {/* Template Selector and Customize */}
+        <Footer />
       </div>
-      {/* CONTAINER - END */}
+      {/* Container - End */}
     </div>
   );
 };

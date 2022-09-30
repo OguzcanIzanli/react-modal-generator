@@ -1,9 +1,10 @@
 .settingsandcode {
+  color: #000000;
+
   .titleContainer {
     display: flex;
     align-items: center;
 
-    color: #000000;
     letter-spacing: -0.03em;
     font-weight: 700;
 
@@ -26,6 +27,173 @@
 
       font-size: 18px;
       line-height: 36px;
+    }
+  }
+
+  .subTitle {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: -0.03em;
+  }
+
+  h3 {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  h4 {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .webhookInput {
+    height: 36px;
+    width: 378px;
+    margin-top: 15px;
+
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+  }
+
+  .webhookInput:hover {
+    border: 1px solid #7d4aea;
+    box-shadow: 1px 1px 2px #7d4aea;
+  }
+
+  .webhookInput:focus {
+    outline: max(2px) solid #7d4aea;
+    opacity: 0.5;
+  }
+
+  .checkbox {
+    display: flex;
+    margin-top: 15px;
+
+    .topping {
+      position: relative;
+
+      input {
+        cursor: pointer;
+      }
+
+      input[type="checkbox"] {
+        height: 18px;
+        width: 18px;
+        background: transparent;
+
+        appearance: none;
+        border: 1px solid #bbbbbb;
+        border-radius: 4px;
+        display: grid;
+        place-content: center;
+        --tw-ring-shadow: none;
+      }
+
+      input[type="checkbox"]::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        transform: scale(0);
+        box-shadow: inset 1em 1em #7d4aea;
+      }
+
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+    }
+
+    span {
+      margin-left: 10px;
+    }
+
+    .p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: #000000;
+      margin-left: 10px;
+    }
+  }
+
+  .getCodeButton {
+    height: 60px;
+    width: 184px;
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    letter-spacing: -0.03em;
+    border-radius: 12px;
+    background-color: rgba(125, 74, 234, 1);
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px 2px rgba(125, 74, 234, 0.27);
+  }
+
+  .getCodeButton:hover {
+    background-color: rgba(125, 24, 234, 1);
+  }
+
+  .codeBox {
+    width: 378px;
+    border-radius: 8px;
+    background: #333333;
+    margin-top: 30px;
+
+    .code {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #ffffff;
+      padding: 15px;
+    }
+
+    .copyCodeButton {
+      height: 30px;
+      width: 129px;
+      border-radius: 160px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: -0.03em;
+
+      background-color: rgba(125, 74, 234, 1);
+      color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0px 5px 10px 2px rgba(125, 74, 234, 0.27);
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      .copyCodeButton {
+        background-color: rgba(125, 24, 234, 1);
+      }
+    }
+  }
+
+  .noticeBox {
+    display: flex;
+    margin-top: 15px;
+
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      margin-left: 5px;
     }
   }
 }
