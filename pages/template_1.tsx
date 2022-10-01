@@ -4,11 +4,13 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 import { useFontSize } from "../Components/Context";
 import { usePosition } from "../Components/Context";
 import { useColor } from "../Components/Context";
+import { useTemplate } from "../Components/Context";
 
 function Template_1() {
   const { fontSize } = useFontSize();
   const { position } = usePosition();
   const { color } = useColor();
+  const { contents } = useTemplate();
 
   const customLocProp = "flex relative flex-col";
 
@@ -30,17 +32,17 @@ function Template_1() {
       </div>
 
       {/* Content */}
-      <h1 className={`${fontSize.h1}`}>Security Code</h1>
-      <h2 className={`${fontSize.h2}`}>This code expires in 24 hours</h2>
-      <p>Code</p>
+      <h1 className={`${fontSize.h1}`}>{contents.h1}</h1>
+      <h2 className={`${fontSize.h2}`}>{contents.h2}</h2>
+      <p>{contents.p}</p>
 
       {/* Button */}
       <form>
-        <button className={styles.buttonCancel}>Cancel</button>
+        <button className={styles.buttonCancel}>{contents.buttonCancel}</button>
         <button
           className={`${styles.buttonApply} ${color.bgcolor} ${color.buttoncolor}`}
         >
-          Continue
+          {contents.buttonApply}
         </button>
       </form>
     </div>

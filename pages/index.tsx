@@ -6,9 +6,16 @@ import Navbar from "./navbar";
 import Hero from "./hero";
 import Selector from "./selector";
 import Footer from "./footer";
-import Customize from "./customize";
+import Content from "./content";
+import Targetting from "./targetting";
+import Appearance from "./appearance";
+import SettingsAndCode from "./settingsandcode";
+
+import { useTemplate } from "../Components/Context";
 
 const Home = () => {
+  const { template } = useTemplate();
+
   return (
     <div>
       <Head>
@@ -23,16 +30,22 @@ const Home = () => {
         <div className={styles.secondBackground}></div>
       </div>
 
-      {/* Container - Start */}
       <div className={styles.container}>
-        <Template_0 /> {/* Example Modal */}
-        <Navbar /> {/* Navbar */}
-        <Hero /> {/* Hero */}
-        <Selector /> {/* Template Selector and Customize */}
-        <Customize />
+        <Template_0 />
+        <Navbar />
+        <Hero />
+        <Selector />
+        <div className={styles.col4_8}>
+          <div className={styles.col4}>
+            <Appearance />
+            <Content />
+            <Targetting />
+            <SettingsAndCode />
+          </div>
+          <div className={styles.col8}>{template}</div>
+        </div>
         <Footer />
       </div>
-      {/* Container - End */}
     </div>
   );
 };

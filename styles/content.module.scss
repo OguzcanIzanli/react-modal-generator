@@ -42,10 +42,11 @@
       height: 36px;
       width: 378px;
       margin-top: 15px;
-
       background: #ffffff;
       border: 1px solid #dddddd;
       border-radius: 8px;
+      padding: 5px 10px;
+      color: #000000;
     }
 
     input:hover {
@@ -55,7 +56,7 @@
 
     input:focus {
       outline: max(2px) solid #7d4aea;
-      opacity: 0.5;
+      opacity: 0.8;
     }
 
     input:last-child {

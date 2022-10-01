@@ -67,7 +67,7 @@ function Appearance() {
         </h1>
       </div>
 
-      {/* FONT SIZE */}
+      {/* Font Size */}
       <p className={styles.subTitles}>Size</p>
 
       <div className={styles.sizeButtonsContainer}>
@@ -123,7 +123,7 @@ function Appearance() {
         </button>
       </div>
 
-      {/* POSITION */}
+      {/* Position */}
       <p className={styles.subTitles}>Position</p>
 
       <div className={styles.positionButtonsContainer}>
@@ -235,7 +235,7 @@ function Appearance() {
         ></button>
       </div>
 
-      {/* COLOR */}
+      {/* Color */}
       <p className={styles.subTitles}>Colors</p>
 
       <div className={styles.colorButtonsContainer}>
@@ -316,7 +316,7 @@ function Appearance() {
         ></button>
       </div>
 
-      {/* LOGO UPLOAD */}
+      {/* Logo Upload */}
       <p className={styles.subTitles}>Upload Logo</p>
       <div className={styles.uploadBox}>
         <div className={styles.uploadLogoBox}>

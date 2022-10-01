@@ -1,4 +1,4 @@
-// THEME
+// Theme
 .theme {
   width: 100%;
   position: absolute;
@@ -15,13 +15,35 @@
   }
 }
 
-// CONTAINER
+// Container
+$container-width: 1194px;
 
 .container {
-  max-width: 1194px;
+  max-width: $container-width;
   min-width: 840px;
   margin: auto;
   padding: 0 10px 20px;
-
   position: relative;
+
+  .col4_8 {
+    margin: auto;
+    position: relative;
+    display: flex;
+
+    .col4 {
+      width: calc($container-width/3);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col8 {
+      width: calc($container-width/3 * 2);
+      margin-top: 540px;
+      height: 0;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 70%;
+    }
+  }
 }
