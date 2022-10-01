@@ -6,6 +6,7 @@ import Navbar from "./navbar";
 import Hero from "./hero";
 import Selector from "./selector";
 import Footer from "./footer";
+import Customize from "./customize";
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
         <Navbar /> {/* Navbar */}
         <Hero /> {/* Hero */}
         <Selector /> {/* Template Selector and Customize */}
+        <Customize />
         <Footer />
       </div>
       {/* Container - End */}

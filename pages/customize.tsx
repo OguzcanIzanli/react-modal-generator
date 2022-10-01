@@ -4,8 +4,11 @@ import Content from "./content";
 import Targetting from "./targetting";
 import Appearance from "./appearance";
 import SettingsAndCode from "./settingsandcode";
+import { useTemplate } from "../Components/Context";
 
-function Customize({ template }: { template: JSX.Element | undefined }) {
+function Customize() {
+  const { template } = useTemplate();
+
   return (
     // Container - Start
     <div className={styles.container}>

@@ -1,6 +1,7 @@
 import styles from "../styles/footer.module.scss";
 import Image from "next/image";
 import { useState } from "react";
+import { BiPlusCircle, BiMinusCircle } from "react-icons/bi";
 
 function Footer() {
   const [isCheckedQ1, setIsCheckedQ1] = useState(false);
@@ -70,6 +71,11 @@ function Footer() {
               }`}
             >
               How do I pay for the essentials or premium plan?
+              <span
+                className={`${isCheckedQ1 === true ? "text-purple-700" : ""}`}
+              >
+                {isCheckedQ1 === true ? <BiMinusCircle /> : <BiPlusCircle />}
+              </span>
             </span>
             <input
               value="1"
@@ -94,6 +100,11 @@ function Footer() {
             >
               Can I cancel my essentials or premium plan subscription at my
               time?
+              <span
+                className={`${isCheckedQ2 === true ? "text-purple-600" : ""}`}
+              >
+                {isCheckedQ2 === true ? <BiMinusCircle /> : <BiPlusCircle />}
+              </span>
             </span>
             <input
               value="2"
@@ -123,6 +134,11 @@ function Footer() {
               }`}
             >
               How do I pay for the essentials or premium plan?
+              <span
+                className={`${isCheckedQ3 === true ? "text-purple-600" : ""}`}
+              >
+                {isCheckedQ3 === true ? <BiMinusCircle /> : <BiPlusCircle />}
+              </span>
             </span>
             <input
               value="3"
@@ -146,6 +162,11 @@ function Footer() {
               }`}
             >
               We need to add new users to our team, how will that be billed?
+              <span
+                className={`${isCheckedQ4 === true ? "text-purple-600" : ""}`}
+              >
+                {isCheckedQ4 === true ? <BiMinusCircle /> : <BiPlusCircle />}
+              </span>
             </span>
             <input
               value="4"
@@ -169,6 +190,11 @@ function Footer() {
               }`}
             >
               How do I pay for the essentials or premium plan?
+              <span
+                className={`${isCheckedQ5 === true ? "text-purple-600" : ""}`}
+              >
+                {isCheckedQ5 === true ? <BiMinusCircle /> : <BiPlusCircle />}
+              </span>
             </span>
             <input
               value="5"
@@ -193,6 +219,11 @@ function Footer() {
             >
               Can I cancel my essentials or premium plan subscription at my
               time?
+              <span
+                className={`${isCheckedQ6 === true ? "text-purple-600" : ""}`}
+              >
+                {isCheckedQ6 === true ? <BiMinusCircle /> : <BiPlusCircle />}
+              </span>
             </span>
             <input
               value="6"

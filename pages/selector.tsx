@@ -1,16 +1,23 @@
 import styles from "../styles/selector.module.scss";
 import { useState } from "react";
 import { templateArray } from "./data";
-
-import Customize from "./customize";
+import { useTemplate } from "../Components/Context";
+import { ITemplate } from "./types";
 
 function selector() {
   const [page, setPage] = useState("1");
-  const [template, setTemplate] = useState<JSX.Element>();
+
+  const { setId, setContents, setTemplate } = useTemplate();
+
+  const cardData = (data: ITemplate) => {
+    setId(data.id);
+    setContents(data.contents);
+    setTemplate(data.template);
+  };
 
   return (
     <>
-      {/* MODAL CARD GENERATOR */}
+      {/* Modal Card Generator */}
       <div className={styles.modalCardGenerator}>
         <div>
           <h1>Modal Card Generator</h1>
@@ -28,7 +35,7 @@ function selector() {
         </div>
       </div>
 
-      {/* MODAL CARD MAPPING AND SELECTION */}
+      {/* Modal Card Mapping and Selection */}
       <div>
         <div className={styles.cards}>
           {templateArray
@@ -40,7 +47,13 @@ function selector() {
                 <div className={styles.selectCard}>
                   <button
                     className={styles.selectButton}
-                    onClick={() => setTemplate(card.template)}
+                    onClick={() =>
+                      cardData({
+                        id: card.id,
+                        contents: card.contents,
+                        template: card.template,
+                      })
+                    }
                   >
                     Select Template
                   </button>
@@ -49,7 +62,7 @@ function selector() {
             ))}
         </div>
 
-        {/* TEMPLATES PAGE BUTTONS */}
+        {/* Templates Page Buttons */}
         <div className={styles.cardPageButtons}>
           <button
             className={`${page === "1" ? styles.cardPageButtonClicked : ""}`}
@@ -72,9 +85,6 @@ function selector() {
             3
           </button>
         </div>
-
-        {/* CUSTOMIZED TEMPLATE EXAMPLE */}
-        <Customize template={template} />
       </div>
     </>
   );

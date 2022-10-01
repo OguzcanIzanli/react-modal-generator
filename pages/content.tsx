@@ -1,5 +1,7 @@
 import styles from "../styles/content.module.scss";
 import Image from "next/image";
+import { templateArray } from "../pages/data";
+import { useState, useEffect } from "react";
 
 function Content() {
   return (
@@ -11,6 +13,7 @@ function Content() {
 
       <p className={styles.subTitles}>Edit your content</p>
 
+      {/* {templateArray[tempId].contents.map(()=> ())} */}
       <div className={styles.contentInputContainer}>
         <input className={styles.contentInput}></input>
         <input className={styles.contentInput}></input>

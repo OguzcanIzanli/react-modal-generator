@@ -24,19 +24,17 @@ function Template_1() {
         </button>
       </div>
 
+      {/* Logo */}
       <div className={`${styles.circle} ${color.bgcolor} ${color.textcolor} `}>
-        {/* LOGO */}
         <Image src="/star.svg" width={36} height={44} />
       </div>
 
-      {/* TITLE */}
+      {/* Content */}
       <h1 className={`${fontSize.h1}`}>Security Code</h1>
-      {/*  */}
-      {/* SUBTITLE */}
       <h2 className={`${fontSize.h2}`}>This code expires in 24 hours</h2>
-      {/* CONTENTS */}
       <p>Code</p>
 
+      {/* Button */}
       <form>
         <button className={styles.buttonCancel}>Cancel</button>
         <button

@@ -1,9 +1,34 @@
+// TEMPLATE
+export interface ITemplateContextProps {
+  id: string;
+  contents: Contents;
+  template: JSX.Element;
+  setId: (id: string) => void;
+  setContents: (contents: Contents) => void;
+  setTemplate: (template: JSX.Element) => void;
+}
+
+export interface ITemplate {
+  id: string;
+  contents: Contents;
+  template: JSX.Element;
+}
+
+export interface Contents {
+  h1?: string;
+  h2?: string;
+  p?: string;
+  buttonCancel?: string;
+  buttonApply?: string;
+}
+
 // POSITION
 export interface IPosition {
   position: string;
   clickedPositionButton: string;
 }
 
+// FONTSIZE
 export interface IFontSizeContextProps {
   fontSize: FontSize;
   clickedFontSizeButton: string;
@@ -11,7 +36,6 @@ export interface IFontSizeContextProps {
   setClickedFontSizeButton: (clickedFontSizeButton: string) => void;
 }
 
-// FONTSIZE
 export interface IFontSize {
   fontSize: FontSize;
   clickedFontSizeButton: string;
