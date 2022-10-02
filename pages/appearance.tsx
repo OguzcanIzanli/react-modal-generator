@@ -2,33 +2,34 @@ import styles from "../styles/appearance.module.scss";
 import { useState, useEffect } from "react";
 import LogoDropzone from "./logoDropzone";
 
-import { useSize, usePosition } from "../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useTemplate,
+  useGetCode,
+  useColor,
+} from "../Components/Context";
 import { ISize } from "./types";
 
-// import { usePosition } from "../Components/Context";
 import { IPosition } from "./types";
 
-import { useColor } from "../Components/Context";
 import { IColor } from "./types";
-
-import { useTemplate } from "../Components/Context";
-import { useGetCode } from "../Components/Context/";
 
 function Appearance() {
   const [sizeSelect, setSizeSelect] = useState("medium");
   const [positionSelect, setPositionSelect] = useState("5");
   const [colorSelect, setColorSelect] = useState("");
 
-  // const { setPosition } = usePosition();
-  const { setSize } = useSize();
+  const { setSizeTemp } = useSize();
   const { setColor } = useColor();
-  const { logoImage } = useTemplate();
-  const { setPositionForBack } = useGetCode();
+  const { logoImage, size } = useTemplate();
+
+  // const { setPositionForBack } = useGetCode();
   const { setPosition } = usePosition();
 
   // Size
   const selectedSize = (data: ISize) => {
-    setSize(data.size);
+    setSizeTemp(data.sizeTemp);
     setSizeSelect(data.clickedSizeButton);
   };
 
@@ -64,10 +65,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedSize({
-              size: {
-                width: "w-[382px]",
-                height: "h-[346px]",
-              },
+              sizeTemp: "small",
               clickedSizeButton: "small",
             })
           }
@@ -81,10 +79,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedSize({
-              size: {
-                width: "w-[462px]",
-                height: "h-[426px]",
-              },
+              sizeTemp: "medium",
               clickedSizeButton: "medium",
             })
           }
@@ -98,10 +93,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedSize({
-              size: {
-                width: "w-[482px]",
-                height: "h-[482px]",
-              },
+              sizeTemp: "large",
               clickedSizeButton: "large",
             })
           }

@@ -12,7 +12,7 @@ import Appearance from "./appearance";
 import SettingsAndCode from "./settingsandcode";
 
 import { useTemplate } from "../Components/Context";
-setTimeout(() => console.log("Initial timeout!"), 10000);
+
 const Home = () => {
   const { template } = useTemplate();
 

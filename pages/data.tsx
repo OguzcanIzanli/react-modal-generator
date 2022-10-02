@@ -7,6 +7,11 @@ export const templateArray = [
     set: "1",
     title: "Template 1",
     template: <Template_1 />,
+    size: {
+      small: "w-[382px] h-[346px]",
+      medium: "w-[462px] h-[426px]",
+      large: "w-[482px] h-[482px]",
+    },
     contents: {
       h1: "Security Code",
       h2: "This code expires in 24 hours",

@@ -7,11 +7,13 @@ export const TemplateContext = createContext<ITemplateContextProps>({
   template: <></>,
   trfl: {},
   logoImage: {},
+  size: {},
   setId: () => {},
   setContents: () => {},
   setTemplate: () => {},
   setTrfl: () => {},
   setLogoImage: () => {},
+  setSize: () => {},
 });
 
 export const TemplateContextProvider = (props: { children: any }) => {
@@ -20,6 +22,7 @@ export const TemplateContextProvider = (props: { children: any }) => {
   const [currentTemplate, setCurrentTemplate] = useState(<></>);
   const [currentTrfl, setCurrentTrfl] = useState<object>([]);
   const [currentLogoImage, setCurrentLogoImage] = useState<object>([]);
+  const [currentSize, setCurrentSize] = useState<object>([]);
 
   return (
     <TemplateContext.Provider
@@ -29,11 +32,13 @@ export const TemplateContextProvider = (props: { children: any }) => {
         template: currentTemplate,
         trfl: currentTrfl,
         logoImage: currentLogoImage,
+        size: currentSize,
         setId: setCurrentId,
         setContents: setCurrentContents,
         setTemplate: setCurrentTemplate,
         setTrfl: setCurrentTrfl,
         setLogoImage: setCurrentLogoImage,
+        setSize: setCurrentSize,
       }}
     >
       {props.children}

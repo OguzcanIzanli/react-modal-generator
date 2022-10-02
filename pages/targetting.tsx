@@ -3,7 +3,7 @@ import styles from "../styles/targetting.module.scss";
 import { BiDesktop, BiMobile } from "react-icons/bi";
 import Select from "react-select";
 
-import { useGetCode } from "../Components/Context/";
+import { useGetCode, useTargetting } from "../Components/Context/";
 
 function Targetting() {
   // Visitor Device
@@ -42,6 +42,40 @@ function Targetting() {
       : "";
   };
 
+  const { setSeconds, setScroll } = useTargetting();
+  // After X Seconds
+  const [isAfterXSeconds, setIsAfterXSeconds] = useState(false);
+  const [secondsInput, setSecondsInput] = useState("");
+
+  const afterXSeconds = () => {
+    setIsAfterXSeconds(!isAfterXSeconds);
+    if (isAfterXSeconds) {
+      setSeconds("");
+      setSecondsInput("");
+    }
+  };
+
+  const handleOnChangeAfterXSeconds = (e: any) => {
+    setSeconds(e.target.value);
+    setSecondsInput(e.target.value);
+  };
+
+  // After % Scroll
+  const [isAfterScroll, setIsAfterScroll] = useState(false);
+  const [scrollInput, setScrollInput] = useState("");
+
+  const afterScroll = () => {
+    setIsAfterScroll(!isAfterScroll);
+    if (isAfterScroll) {
+      setScroll("");
+      setScrollInput("");
+    }
+  };
+
+  const handleOnChangeAfterScroll = (e: any) => {
+    setScroll(e.target.value);
+    setScrollInput(e.target.value);
+  };
   // const options = [
   //   { value: "eng-ENG", label: "English" },
   //   { value: "fr-FR", label: "French" },
@@ -125,20 +159,44 @@ function Targetting() {
       <div className={styles.rules}>
         <div className={styles.rulesSwitch}>
           <p className={styles.subTitles}>After X Seconds</p>
-          <input className={styles.switch} type="checkbox" id="switch2" />
+          <input
+            className={styles.switch}
+            type="checkbox"
+            id="switch2"
+            onChange={afterXSeconds}
+          />
           <label htmlFor="switch2">Toggle</label>
         </div>
-        <input className={styles.targetingRulesInputs} />
+        <input
+          type="number"
+          value={secondsInput}
+          className={`${styles.targetingRulesInputs} ${
+            isAfterXSeconds ? "" : "hidden"
+          }`}
+          onChange={handleOnChangeAfterXSeconds}
+        />
       </div>
 
       {/* After % Scroll */}
       <div className={styles.rules}>
         <div className={styles.rulesSwitch}>
           <p className={styles.subTitles}>After % Scroll</p>
-          <input className={styles.switch} type="checkbox" id="switch3" />
+          <input
+            className={styles.switch}
+            type="checkbox"
+            id="switch3"
+            onChange={afterScroll}
+          />
           <label htmlFor="switch3">Toggle</label>
         </div>
-        <input className={styles.targetingRulesInputs} />
+        <input
+          type="number"
+          value={scrollInput}
+          className={`${styles.targetingRulesInputs} ${
+            isAfterScroll ? "" : "hidden"
+          }`}
+          onChange={handleOnChangeAfterScroll}
+        />
       </div>
 
       {/* Traffic Source */}

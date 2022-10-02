@@ -13,20 +13,21 @@ export interface IPosition {
 
 // SIZE
 export interface ISizeContextProps {
-  size: Size;
+  sizeTemp: string;
   clickedSizeButton: string;
-  setSize: (size: Size) => void;
+  setSizeTemp: (sizeTemp: string) => void;
   setClickedSizeButton: (clickedSizeButton: string) => void;
 }
 
 export interface ISize {
-  size: Size;
+  sizeTemp: string;
   clickedSizeButton: string;
 }
 
 export interface Size {
-  width?: string;
-  height?: string;
+  small?: string;
+  medium?: string;
+  large?: string;
 }
 
 // COLOR
@@ -69,11 +70,13 @@ export interface ITemplateContextProps {
   template: JSX.Element;
   trfl: Trfl;
   logoImage: LogoImage;
+  size: Size;
   setId: (id: string) => void;
   setContents: (contents: Contents) => void;
   setTemplate: (template: JSX.Element) => void;
   setTrfl: (trfl: Trfl) => void;
   setLogoImage: (logoImage: LogoImage) => void;
+  setSize: (size: Size) => void;
 }
 
 export interface ITemplate {
@@ -82,6 +85,7 @@ export interface ITemplate {
   template: JSX.Element;
   trfl: Trfl;
   logoImage: LogoImage;
+  size: Size;
 }
 
 // TEXT CONTENTS
@@ -123,6 +127,10 @@ export interface LogoImage {
 export interface ITargettingContextProps {
   device: string;
   setDevice: (id: string) => void;
+  seconds: string;
+  setSeconds: (seconds: string) => void;
+  scroll: string;
+  setScroll: (scroll: string) => void;
 }
 
 // GETCODE

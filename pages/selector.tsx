@@ -7,7 +7,7 @@ import { ITemplate } from "./types";
 function selector() {
   const [page, setPage] = useState("1");
 
-  const { setId, setContents, setTemplate, setTrfl, setLogoImage } =
+  const { setId, setContents, setTemplate, setTrfl, setLogoImage, setSize } =
     useTemplate();
 
   const cardData = (data: ITemplate) => {
@@ -16,12 +16,13 @@ function selector() {
     setTemplate(data.template);
     setTrfl(data.trfl);
     setLogoImage(data.logoImage);
+    setSize(data.size);
   };
 
   return (
     <>
       {/* Modal Card Generator */}
-      <div className={styles.modalCardGenerator}>
+      <div id="selector" className={styles.modalCardGenerator}>
         <div>
           <h1>Modal Card Generator</h1>
 
@@ -57,6 +58,7 @@ function selector() {
                         template: card.template,
                         trfl: card.trfl,
                         logoImage: card.logoImage,
+                        size: card.size,
                       })
                     }
                   >

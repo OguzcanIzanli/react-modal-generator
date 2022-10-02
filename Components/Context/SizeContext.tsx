@@ -2,25 +2,22 @@ import { createContext, useState } from "react";
 import { ISizeContextProps } from "../../pages/types";
 
 export const SizeContext = createContext<ISizeContextProps>({
-  size: {},
+  sizeTemp: "",
   clickedSizeButton: "",
-  setSize: () => {},
+  setSizeTemp: () => {},
   setClickedSizeButton: () => {},
 });
 
 export const SizeContextProvider = (props: { children: any }) => {
-  const [currentSize, setCurrentSize] = useState<object>({
-    width: "w-[462px]",
-    height: "h-[426px]",
-  });
+  const [currentSizeTemp, setCurrentSizeTemp] = useState("");
   const [clickedSizeButton, setClickedSizeButton] = useState("");
 
   return (
     <SizeContext.Provider
       value={{
-        size: currentSize,
+        sizeTemp: currentSizeTemp,
         clickedSizeButton: clickedSizeButton,
-        setSize: setCurrentSize,
+        setSizeTemp: setCurrentSizeTemp,
         setClickedSizeButton: setClickedSizeButton,
       }}
     >

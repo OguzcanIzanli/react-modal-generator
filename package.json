@@ -21,9 +21,11 @@
     "react-select": "^5.4.0",
     "sass": "^1.55.0",
     "scss": "^0.2.4",
-    "surge": "^0.23.1"
+    "surge": "^0.23.1",
+    "upload-js": "^1.48.21"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.14",
     "@types/node": "18.7.20",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",

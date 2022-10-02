@@ -83,7 +83,13 @@ function Footer() {
               id="q1"
               onChange={handleOnChange}
             />
-            <p className={styles.context}></p>
+            <p className={styles.context}>
+              You can pay with a credit card or via net banking (if you’re in
+              United States). We willrenew your subscription automatically at
+              the end of every billing cycle. You can paywith a credit card or
+              via net banking (if you’re in United States). We will renew your
+              subscription automatically at the end of every billing cycle.
+            </p>
           </div>
         </label>
 
@@ -146,7 +152,13 @@ function Footer() {
               id="q3"
               onChange={handleOnChange}
             />
-            <p className={styles.context}></p>
+            <p className={styles.context}>
+              You can pay with a credit card or via net banking (if you’re in
+              United States). We willrenew your subscription automatically at
+              the end of every billing cycle. You can paywith a credit card or
+              via net banking (if you’re in United States). We will renew your
+              subscription automatically at the end of every billing cycle.
+            </p>
           </div>
         </label>
 
@@ -174,7 +186,13 @@ function Footer() {
               id="q4"
               onChange={handleOnChange}
             />
-            <p className={styles.context}></p>
+            <p className={styles.context}>
+              You can pay with a credit card or via net banking (if you’re in
+              United States). We willrenew your subscription automatically at
+              the end of every billing cycle. You can paywith a credit card or
+              via net banking (if you’re in United States). We will renew your
+              subscription automatically at the end of every billing cycle.
+            </p>
           </div>
         </label>
 
@@ -202,7 +220,13 @@ function Footer() {
               id="q5"
               onChange={handleOnChange}
             />
-            <p className={styles.context}></p>
+            <p className={styles.context}>
+              You can pay with a credit card or via net banking (if you’re in
+              United States). We willrenew your subscription automatically at
+              the end of every billing cycle. You can paywith a credit card or
+              via net banking (if you’re in United States). We will renew your
+              subscription automatically at the end of every billing cycle.
+            </p>
           </div>
         </label>
 
@@ -231,7 +255,13 @@ function Footer() {
               id="q6"
               onChange={handleOnChange}
             />
-            <p className={styles.context}></p>
+            <p className={styles.context}>
+              You can pay with a credit card or via net banking (if you’re in
+              United States). We willrenew your subscription automatically at
+              the end of every billing cycle. You can paywith a credit card or
+              via net banking (if you’re in United States). We will renew your
+              subscription automatically at the end of every billing cycle.
+            </p>
           </div>
         </label>
       </div>

@@ -1,5 +1,5 @@
 import styles from "../styles/hero.module.scss";
-import Image from "next/image"
+import Image from "next/image";
 
 function Hero() {
   return (
@@ -13,7 +13,9 @@ function Hero() {
           directly in your markup.
         </p>
 
-        <button>Try it out now</button>
+        <button>
+          <a href="#selector">Try it out now</a>
+        </button>
 
         {/* HERO ADVANTAGES*/}
         <div className={styles.heroAdvantages}>
