@@ -1,10 +1,10 @@
 import styles from "../styles/content.module.scss";
-import Image from "next/image";
+import ImageDropzone from "./imageDropzone";
 
 import { useTemplate } from "../Components/Context";
 
 function Content() {
-  const { contents, setContents } = useTemplate();
+  const { contents, setContents, trfl, logoImage } = useTemplate();
 
   const onChangeInputh1 = (e: any) => {
     setContents({ ...contents, h1: e.target.value });
@@ -49,10 +49,10 @@ function Content() {
         <h1 className={styles.title}>Content</h1>
       </div>
 
-      <p className={styles.subTitles}>Edit your content</p>
+      {trfl.h1 ? <p className={styles.subTitles}>Edit your content</p> : ""}
 
       <div className={styles.contentInputContainer}>
-        {contents.h1 ? (
+        {trfl.h1 ? (
           <input
             placeholder={`${contents.h1}`}
             className={styles.contentInput}
@@ -61,7 +61,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.h2 ? (
+        {trfl.h2 ? (
           <input
             placeholder={`${contents.h2}`}
             className={styles.contentInput}
@@ -70,7 +70,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.h3 ? (
+        {trfl.h3 ? (
           <input
             placeholder={`${contents.h3}`}
             className={styles.contentInput}
@@ -79,7 +79,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.h4 ? (
+        {trfl.h4 ? (
           <input
             placeholder={`${contents.h4}`}
             className={styles.contentInput}
@@ -88,7 +88,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.h5 ? (
+        {trfl.h5 ? (
           <input
             placeholder={`${contents.h5}`}
             className={styles.contentInput}
@@ -97,7 +97,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.h6 ? (
+        {trfl.h6 ? (
           <input
             placeholder={`${contents.h6}`}
             className={styles.contentInput}
@@ -106,7 +106,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.p ? (
+        {trfl.p ? (
           <input
             placeholder={`${contents.p}`}
             className={styles.contentInput}
@@ -115,7 +115,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.buttonApply ? (
+        {trfl.buttonApply ? (
           <input
             placeholder={`${contents.buttonApply}`}
             className={styles.contentInput}
@@ -124,7 +124,7 @@ function Content() {
         ) : (
           ""
         )}
-        {contents.buttonCancel ? (
+        {trfl.buttonCancel ? (
           <input
             placeholder={`${contents.buttonCancel}`}
             className={styles.contentInput}
@@ -135,16 +135,8 @@ function Content() {
         )}
       </div>
 
-      <p className={styles.subTitles}>Upload image</p>
-
-      <div className={styles.uploadBox}>
-        <div>
-          <Image src="/uploadLogo.svg" width={18} height={18} />
-          <p>
-            Drop your image here or <span>upload</span>
-          </p>
-        </div>
-      </div>
+      {/* Image Upload */}
+      {logoImage.image ? <ImageDropzone /> : ""}
     </div>
   );
 }

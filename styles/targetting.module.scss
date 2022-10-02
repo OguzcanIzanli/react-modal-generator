@@ -34,73 +34,75 @@
     margin-top: 30px;
 
     .deviceBox {
-      display: flex;
-      justify-content: space-between;
       margin-top: 20px;
 
-      .checkbox {
-        height: 48px;
-        width: 179px;
-        left: 243px;
-
+      .boxContainer {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+        .checkbox {
+          height: 48px;
+          width: 179px;
+          left: 243px;
 
-        background: #f5f5f5;
-        border-radius: 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-        .topping {
-          position: relative;
+          background: #f5f5f5;
+          border-radius: 12px;
 
-          input {
-            cursor: pointer;
+          .topping {
+            position: relative;
+
+            input {
+              cursor: pointer;
+            }
+
+            input[type="checkbox"] {
+              height: 18px;
+              width: 18px;
+              background: transparent;
+
+              appearance: none;
+              border: 1px solid #bbbbbb;
+              border-radius: 4px;
+              display: grid;
+              place-content: center;
+              --tw-ring-shadow: none;
+            }
+
+            input[type="checkbox"]::before {
+              content: "";
+              width: 12px;
+              height: 12px;
+              transform: scale(0);
+              box-shadow: inset 1em 1em #7d4aea;
+            }
+
+            input[type="checkbox"]:checked::before {
+              transform: scale(1);
+              clip-path: polygon(
+                14% 44%,
+                0 65%,
+                50% 100%,
+                100% 16%,
+                80% 0%,
+                43% 62%
+              );
+            }
           }
 
-          input[type="checkbox"] {
-            height: 18px;
-            width: 18px;
-            background: transparent;
-
-            appearance: none;
-            border: 1px solid #bbbbbb;
-            border-radius: 4px;
-            display: grid;
-            place-content: center;
-            --tw-ring-shadow: none;
+          span {
+            margin-left: 10px;
           }
 
-          input[type="checkbox"]::before {
-            content: "";
-            width: 12px;
-            height: 12px;
-            transform: scale(0);
-            box-shadow: inset 1em 1em #7d4aea;
+          .p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            color: #000000;
+            margin: auto 5px;
           }
-
-          input[type="checkbox"]:checked::before {
-            transform: scale(1);
-            clip-path: polygon(
-              14% 44%,
-              0 65%,
-              50% 100%,
-              100% 16%,
-              80% 0%,
-              43% 62%
-            );
-          }
-        }
-
-        span {
-          margin-left: 10px;
-        }
-
-        .p {
-          font-weight: 500;
-          font-size: 14px;
-          line-height: 18px;
-          color: #000000;
-          margin: auto 5px;
         }
       }
     }
@@ -245,6 +247,54 @@
             color: #2d2f31;
           }
         }
+      }
+    }
+
+    label {
+      cursor: pointer;
+
+      .dropdown {
+        border: 1px solid rgba(221, 221, 221, 1);
+        border-radius: 8px;
+
+        span {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: -0.01em;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        span::after {
+          float: right;
+          right: 10%;
+        }
+
+        input {
+          position: absolute;
+          opacity: 0;
+          height: 0px;
+        }
+
+        input:checked + .context {
+          height: 100px;
+        }
+      }
+
+      .context {
+        clear: both;
+        width: 840px;
+        height: 0px;
+        overflow: hidden;
+        transition: height 0.4s ease;
+        margin-top: 20px;
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 26px;
+
+        letter-spacing: -0.01em;
       }
     }
   }

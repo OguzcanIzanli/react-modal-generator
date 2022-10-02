@@ -1,30 +1,21 @@
-$default-button-text-color: #ffff; // Button text color
-
-$container-width: 480px; // Container sizes to generate other modals
-$container-height: 446px;
+// $container-width: 480px; // Container sizes to generate other modals
+// $container-height: 446px;
 
 .container {
-  height: $container-height;
-  width: $container-width;
-  margin: calc($container-height * (-1)) calc(($container-width) * (-1));
-
-  text-align: center;
+  // height: $container-height;
+  // width: $container-width;
   border-radius: 15px;
   background-color: white;
   box-shadow: 10px 10px 30px 1px #cacaca;
-  overflow: hidden;
-
+  font-size: 36px;
   // Close Button - Start
-  .closeButtonSquare {
-    height: 34px;
-    width: 34px;
 
+  .closeButtonSquare {
     position: absolute;
-    top: 23px;
-    right: 23px;
+    top: 17px;
+    right: 25px;
 
     .closeButton {
-      font-size: 34px;
       color: #000000;
       opacity: 0.4;
     }
@@ -34,97 +25,102 @@ $container-height: 446px;
       transition: 0.3s;
     }
   }
+
   // Close Button - End
 
-  // Figure - Start
-  .circle {
-    height: 90px;
-    width: 90px;
-    margin: 40px auto 0px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0.9;
-    border-radius: 50%;
-  }
-  // Figure - End
-
   // Content - Start
-  h1 {
-    // TITLE
-    margin-top: 29px;
+  .contents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 15px;
+    text-align: center;
 
-    color: #000000;
-    font-weight: 700;
-    line-height: 36px;
-    letter-spacing: 0em;
-  }
-
-  h2 {
-    // SUBTITLE
-    margin-top: 20px;
-
-    color: #000000;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-  }
-
-  p {
-    // CONTENTS
-    width: 350px;
-    height: 48px;
-
-    margin: 41px auto 0;
-    text-align: left;
-    padding: 15px;
-
-    color: #000000;
-    border-radius: 12px;
-    border: 1px solid rgba(210, 218, 227, 1);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 16px;
-  }
-  // Content - End
-
-  // Buttons and Inputs - Start
-  form {
-    margin-top: 30px;
-
-    button {
-      height: 48px;
-      width: 168px;
-      border: 1px solid rgba(210, 218, 227, 1);
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: 0em;
-    }
-
-    .buttonCancel {
-      color: #000000;
-    }
-
-    .buttonCancel:hover {
-      background: rgb(248, 248, 248);
-      transition: 0.3s;
-      box-shadow: 1px 1px 8px #e8e8e8;
-    }
-
-    .buttonApply {
-      margin-left: 14px;
-
+    // Figure - Start
+    .circle {
+      height: 90px;
+      width: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       opacity: 0.9;
+      border-radius: 50%;
+
+      img {
+        color: #fff;
+      }
+    }
+    // Figure - End
+
+    h1 {
+      color: #000000;
+      font-weight: 700;
+      line-height: 36px;
+      letter-spacing: 0em;
+      font-size: 30px;
     }
 
-    .buttonApply:hover {
-      transition: 0.3s;
-      opacity: 1;
-      box-shadow: 1px 1px 8px #cacaca;
+    h2 {
+      color: #000000;
+      font-weight: 400;
+      line-height: 40px;
+      letter-spacing: 0em;
+      font-size: 20px;
+    }
+
+    p {
+      width: 80%;
+      height: 48px;
+      text-align: left;
+      padding: 15px;
+      color: #000000;
+      border-radius: 12px;
+      border: 1px solid rgba(210, 218, 227, 1);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+    }
+    // Content - End
+
+    // Buttons and Inputs - Start
+    form {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        height: 48px;
+        width: 168px;
+        border: 1px solid rgba(210, 218, 227, 1);
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0em;
+      }
+
+      .buttonCancel {
+        color: #000000;
+      }
+
+      .buttonCancel:hover {
+        background: rgb(248, 248, 248);
+        transition: 0.3s;
+        box-shadow: 1px 1px 8px #e8e8e8;
+      }
+
+      .buttonApply {
+        opacity: 0.9;
+      }
+
+      .buttonApply:hover {
+        transition: 0.3s;
+        opacity: 1;
+        box-shadow: 1px 1px 8px #cacaca;
+      }
     }
   }
 }

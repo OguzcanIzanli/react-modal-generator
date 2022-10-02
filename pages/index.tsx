@@ -12,7 +12,7 @@ import Appearance from "./appearance";
 import SettingsAndCode from "./settingsandcode";
 
 import { useTemplate } from "../Components/Context";
-
+setTimeout(() => console.log("Initial timeout!"), 10000);
 const Home = () => {
   const { template } = useTemplate();
 
@@ -31,10 +31,11 @@ const Home = () => {
       </div>
 
       <div className={styles.container}>
-        <Template_0 />
         <Navbar />
         <Hero />
+        <Template_0 />
         <Selector />
+
         <div className={styles.col4_8}>
           <div className={styles.col4}>
             <Appearance />

@@ -9,7 +9,13 @@ export const ColorContext = createContext<IColorContextProps>({
 });
 
 export const ColorContextProvider = (props: { children: any }) => {
-  const [currentColor, setCurrentColor] = useState<object>([{}]);
+  const [currentColor, setCurrentColor] = useState<object>({
+    bgcolor: "bg-purple-600",
+    textcolor: "text-black",
+    buttoncolor: "text-white",
+    clickedColorButton: "",
+  });
+
   const [clickedColorButton, setClickedColorButton] = useState("");
 
   return (

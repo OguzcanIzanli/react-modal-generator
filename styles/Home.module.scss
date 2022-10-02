@@ -38,12 +38,10 @@ $container-width: 1194px;
 
     .col8 {
       width: calc($container-width/3 * 2);
-      margin-top: 540px;
-      height: 0;
+      padding-top: 90px;
       display: flex;
       justify-content: center;
-      position: sticky;
-      top: 70%;
+      position: relative;
     }
   }
 }

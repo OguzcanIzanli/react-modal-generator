@@ -3,7 +3,7 @@ import Image from "next/image";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import Link from "next/link";
 
-function Template0() {
+function Template_0() {
   return (
     <div className={styles.container}>
       <div className={styles.closeButtonSquare}>
@@ -63,4 +63,4 @@ function Template0() {
   );
 }
 
-export default Template0;
+export default Template_0;

@@ -10,6 +10,10 @@ export const templateArray = [
     contents: {
       h1: "Security Code",
       h2: "This code expires in 24 hours",
+      h3: "",
+      h4: "",
+      h5: "",
+      h6: "",
       p: "Code",
       buttonCancel: "Cancel",
       buttonApply: "Continue",
@@ -24,6 +28,11 @@ export const templateArray = [
       p: true,
       buttonCancel: true,
       buttonApply: true,
+    },
+
+    logoImage: {
+      logo: true,
+      image: false,
     },
   },
   // {

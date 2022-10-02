@@ -1,48 +1,35 @@
 import styles from "../styles/appearance.module.scss";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import LogoDropzone from "./logoDropzone";
 
-import { useFontSize } from "../Components/Context";
-import { IFontSize } from "./types";
+import { useSize, usePosition } from "../Components/Context";
+import { ISize } from "./types";
 
-import { usePosition } from "../Components/Context";
+// import { usePosition } from "../Components/Context";
 import { IPosition } from "./types";
 
 import { useColor } from "../Components/Context";
 import { IColor } from "./types";
 
+import { useTemplate } from "../Components/Context";
+import { useGetCode } from "../Components/Context/";
+
 function Appearance() {
-  const [fontSizeSelect, setFontSizeSelect] = useState("");
+  const [sizeSelect, setSizeSelect] = useState("medium");
   const [positionSelect, setPositionSelect] = useState("5");
   const [colorSelect, setColorSelect] = useState("");
 
-  const { setFontSize } = useFontSize();
-  const { setPosition } = usePosition();
+  // const { setPosition } = usePosition();
+  const { setSize } = useSize();
   const { setColor } = useColor();
+  const { logoImage } = useTemplate();
+  const { setPositionForBack } = useGetCode();
+  const { setPosition } = usePosition();
 
-  // Modal Default Settings
-  useEffect(() => {
-    selectedFontSize({
-      fontSize: {
-        h1: "text-4xl",
-        h2: "text-xl",
-      },
-      clickedFontSizeButton: "medium",
-    });
-    selectedColor({
-      color: {
-        bgcolor: "bg-purple-600",
-        textcolor: "text-black",
-        buttoncolor: "text-white",
-      },
-      clickedColorButton: "",
-    });
-  }, []);
-
-  // Font Size
-  const selectedFontSize = (data: IFontSize) => {
-    setFontSize(data.fontSize);
-    setFontSizeSelect(data.clickedFontSizeButton);
+  // Size
+  const selectedSize = (data: ISize) => {
+    setSize(data.size);
+    setSizeSelect(data.clickedSizeButton);
   };
 
   // Position
@@ -67,21 +54,21 @@ function Appearance() {
         </h1>
       </div>
 
-      {/* Font Size */}
+      {/*Size */}
       <p className={styles.subTitles}>Size</p>
 
       <div className={styles.sizeButtonsContainer}>
         <button
           className={`${
-            fontSizeSelect === "small" ? styles.fontSizeSelectClicked : ""
+            sizeSelect === "small" ? styles.sizeSelectClicked : ""
           }`}
           onClick={() =>
-            selectedFontSize({
-              fontSize: {
-                h1: "text-3xl",
-                h2: "text-lg",
+            selectedSize({
+              size: {
+                width: "w-[382px]",
+                height: "h-[346px]",
               },
-              clickedFontSizeButton: "small",
+              clickedSizeButton: "small",
             })
           }
         >
@@ -90,15 +77,15 @@ function Appearance() {
 
         <button
           className={`${
-            fontSizeSelect === "medium" ? styles.fontSizeSelectClicked : ""
+            sizeSelect === "medium" ? styles.sizeSelectClicked : ""
           }`}
           onClick={() =>
-            selectedFontSize({
-              fontSize: {
-                h1: "text-4xl",
-                h2: "text-xl",
+            selectedSize({
+              size: {
+                width: "w-[462px]",
+                height: "h-[426px]",
               },
-              clickedFontSizeButton: "medium",
+              clickedSizeButton: "medium",
             })
           }
         >
@@ -107,15 +94,15 @@ function Appearance() {
 
         <button
           className={`${
-            fontSizeSelect === "large" ? styles.fontSizeSelectClicked : ""
+            sizeSelect === "large" ? styles.sizeSelectClicked : ""
           }`}
           onClick={() =>
-            selectedFontSize({
-              fontSize: {
-                h1: "text-5xl",
-                h2: "text-2xl",
+            selectedSize({
+              size: {
+                width: "w-[482px]",
+                height: "h-[482px]",
               },
-              clickedFontSizeButton: "large",
+              clickedSizeButton: "large",
             })
           }
         >
@@ -133,8 +120,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position:
-                "translate-x-0 right-full translate-y-0 bottom-full fixed",
+              position: "top-0 left-0 fixed",
               clickedPositionButton: "1",
             })
           }
@@ -146,8 +132,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position:
-                "translate-x-1/2 left-1/2 translate-y-0 bottom-full fixed",
+              position: "top-0 fixed",
               clickedPositionButton: "2",
             })
           }
@@ -158,8 +143,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position:
-                "translate-x-0 left-full translate-y-0 bottom-full fixed",
+              position: "top-0 right-0 fixed",
               clickedPositionButton: "3",
             })
           }
@@ -170,8 +154,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position:
-                "translate-x-0 right-full -translate-y-1/2 bottom-1/2 fixed",
+              position: "left-0 top-1/4 fixed",
               clickedPositionButton: "4",
             })
           }
@@ -182,8 +165,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position:
-                "translate-x-1/2 left-1/2 -translate-y-1/2 bottom-1/2 fixed",
+              position: "right-1/4 top-1/4 fixed",
               clickedPositionButton: "5",
             })
           }
@@ -194,8 +176,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position:
-                "translate-x-0 left-full -translate-y-1/2 bottom-1/2 fixed",
+              position: "right-0 top-1/4 fixed",
               clickedPositionButton: "6",
             })
           }
@@ -206,7 +187,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position: "translate-x-0 right-full translate-y-0 top-full fixed",
+              position: "left-0 bottom-0 fixed",
               clickedPositionButton: "7",
             })
           }
@@ -217,7 +198,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position: "translate-x-1/2 left-1/2 translate-y-0 top-full fixed",
+              position: "bottom-0 fixed",
               clickedPositionButton: "8",
             })
           }
@@ -228,7 +209,7 @@ function Appearance() {
           }`}
           onClick={() =>
             selectedPosition({
-              position: "translate-x-0 left-full translate-y-0 top-full fixed",
+              position: "bottom-0 right-0 fixed",
               clickedPositionButton: "9",
             })
           }
@@ -317,18 +298,7 @@ function Appearance() {
       </div>
 
       {/* Logo Upload */}
-      <p className={styles.subTitles}>Upload Logo</p>
-      <div className={styles.uploadBox}>
-        <div className={styles.uploadLogoBox}>
-          <Image src="/imgLogo.svg" height={36} width={36} />
-        </div>
-        <div>
-          <Image src="/uploadLogo.svg" width={18} height={18} />
-          <p>
-            Drop your image here or <span>upload</span>
-          </p>
-        </div>
-      </div>
+      {logoImage.logo ? <LogoDropzone /> : ""}
     </div>
   );
 }

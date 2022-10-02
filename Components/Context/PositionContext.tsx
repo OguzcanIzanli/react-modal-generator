@@ -1,11 +1,5 @@
 import { createContext, useState } from "react";
-
-type IPositionContextProps = {
-  position: string;
-  clickedPositionButton: string;
-  setPosition: (position: string) => void;
-  setClickedPositionButton: (clickedPositionButton: string) => void;
-};
+import { IPositionContextProps } from "../../pages/types";
 
 export const PositionContext = createContext<IPositionContextProps>({
   position: "",

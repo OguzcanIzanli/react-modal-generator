@@ -1,23 +1,58 @@
 import { useState } from "react";
 import styles from "../styles/targetting.module.scss";
 import { BiDesktop, BiMobile } from "react-icons/bi";
+import Select from "react-select";
+
+import { useGetCode } from "../Components/Context/";
 
 function Targetting() {
+  // Visitor Device
   const [isCheckedDesktop, setIsCheckedDesktop] = useState(false);
   const [isCheckedMobile, setIsCheckedMobile] = useState(false);
+  const [isVisitorDevice, setIsVisitorDevice] = useState(false);
+
+  const { setDeviceForBack } = useGetCode();
 
   const handleOnChangeDesktop = () => {
     setIsCheckedDesktop(!isCheckedDesktop);
     if (isCheckedDesktop === false) {
       setIsCheckedMobile(false);
+      setDeviceForBack("isBrowser");
     }
   };
 
   const handleOnChangeMobile = () => {
     setIsCheckedMobile(!isCheckedMobile);
+    console.log(isCheckedMobile);
     if (isCheckedMobile === false) {
       setIsCheckedDesktop(false);
+      return setDeviceForBack("isMobile");
     }
+    setDeviceForBack("");
+  };
+
+  const visitorDevice = () => {
+    setIsVisitorDevice(!isVisitorDevice);
+    isVisitorDevice
+      ? setDeviceForBack("")
+      : isCheckedMobile
+      ? setDeviceForBack("isMobile")
+      : isCheckedDesktop
+      ? setDeviceForBack("isBrowser")
+      : "";
+  };
+
+  // const options = [
+  //   { value: "eng-ENG", label: "English" },
+  //   { value: "fr-FR", label: "French" },
+  //   { value: "ger-GER", label: "German" },
+  //   { value: "pl-PL", label: "Polish" },
+  //   { value: "dt-DT", label: "Dutch" },
+  //   { value: "fn-FN", label: "Finnish" },
+  // ];
+
+  const handleChange = (e: any) => {
+    console.log(e);
   };
 
   return (
@@ -30,48 +65,58 @@ function Targetting() {
       {/* Visitor Device */}
       <div className={styles.rules}>
         <div className={styles.rulesSwitch}>
-          <p className={styles.subTitles}>Visitor Device</p>
-          <input className={styles.switch} type="checkbox" id="switch1" />
+          <p className={styles.subTitles}>
+            Visitor Device (Desktop and Mobile)
+          </p>
+          <input
+            className={styles.switch}
+            type="checkbox"
+            id="switch1"
+            onChange={visitorDevice}
+          />
           <label htmlFor="switch1">Toggle</label>
         </div>
+        <div
+          className={`${styles.deviceBox} ${isVisitorDevice ? "" : "hidden"} `}
+        >
+          <div className={styles.boxContainer}>
+            <div className={styles.checkbox}>
+              <div className={styles.topping}>
+                <input
+                  type="checkbox"
+                  // id="topping1"
+                  // name="topping1"
+                  value="Paneer"
+                  checked={isCheckedDesktop}
+                  onChange={handleOnChangeDesktop}
+                />
 
-        <div className={styles.deviceBox}>
-          <div className={styles.checkbox}>
-            <div className={styles.topping}>
-              <input
-                type="checkbox"
-                // id="topping1"
-                // name="topping1"
-                value="Paneer"
-                checked={isCheckedDesktop}
-                onChange={handleOnChangeDesktop}
-              />
-
-              {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
+                {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
+              </div>
+              <span>
+                <BiDesktop />
+              </span>
+              <p className={styles.p}>Desktop</p>
             </div>
-            <span>
-              <BiDesktop />
-            </span>
-            <p className={styles.p}>Desktop</p>
-          </div>
 
-          <div className={styles.checkbox}>
-            <div className={styles.topping}>
-              <input
-                type="checkbox"
-                // id="topping2"
-                // name="topping2"
-                value="Paneer"
-                checked={isCheckedMobile}
-                onChange={handleOnChangeMobile}
-              />
+            <div className={styles.checkbox}>
+              <div className={styles.topping}>
+                <input
+                  type="checkbox"
+                  // id="topping2"
+                  // name="topping2"
+                  value="Paneer"
+                  checked={isCheckedMobile}
+                  onChange={handleOnChangeMobile}
+                />
 
-              {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
+                {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
+              </div>
+              <span>
+                <BiMobile />
+              </span>
+              <p className={styles.p}>Mobile</p>
             </div>
-            <span>
-              <BiMobile />
-            </span>
-            <p className={styles.p}>Mobile</p>
           </div>
         </div>
       </div>
@@ -113,6 +158,24 @@ function Targetting() {
           <input className={styles.switch} type="checkbox" id="switch5" />
           <label htmlFor="switch5">Toggle</label>
         </div>
+
+        <Select
+          // options={options}
+          onChange={handleChange}
+          isMulti
+          placeholder="Select"
+        />
+
+        <label htmlFor="q4">
+          <div className={`${styles.dropdown} `}>
+            <span>
+              Select
+              <span>dfdfg</span>
+            </span>
+            <input value="4" type="checkbox" id="q4" />
+            <p className={styles.context}></p>
+          </div>
+        </label>
 
         <div className={styles.dropdown}>
           <label htmlFor="touch">
