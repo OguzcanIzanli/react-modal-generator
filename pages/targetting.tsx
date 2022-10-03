@@ -1,14 +1,17 @@
 import { useState } from "react";
 import styles from "../styles/targetting.module.scss";
 import { BiDesktop, BiMobile } from "react-icons/bi";
-import Select from "react-select";
-
+import Image from "next/image";
+import { GrFormClose } from "react-icons/gr";
+import { browserLanguages } from "./data";
 import { useGetCode, useTargetting } from "../Components/Context/";
+import { IClickedItem } from "./types";
 
 function Targetting() {
   // Visitor Device
   const [isCheckedDesktop, setIsCheckedDesktop] = useState(false);
   const [isCheckedMobile, setIsCheckedMobile] = useState(false);
+
   const [isVisitorDevice, setIsVisitorDevice] = useState(false);
 
   const { setDeviceForBack } = useGetCode();
@@ -23,7 +26,6 @@ function Targetting() {
 
   const handleOnChangeMobile = () => {
     setIsCheckedMobile(!isCheckedMobile);
-    console.log(isCheckedMobile);
     if (isCheckedMobile === false) {
       setIsCheckedDesktop(false);
       return setDeviceForBack("isMobile");
@@ -43,6 +45,7 @@ function Targetting() {
   };
 
   const { setSeconds, setScroll } = useTargetting();
+
   // After X Seconds
   const [isAfterXSeconds, setIsAfterXSeconds] = useState(false);
   const [secondsInput, setSecondsInput] = useState("");
@@ -76,19 +79,59 @@ function Targetting() {
     setScroll(e.target.value);
     setScrollInput(e.target.value);
   };
-  // const options = [
-  //   { value: "eng-ENG", label: "English" },
-  //   { value: "fr-FR", label: "French" },
-  //   { value: "ger-GER", label: "German" },
-  //   { value: "pl-PL", label: "Polish" },
-  //   { value: "dt-DT", label: "Dutch" },
-  //   { value: "fn-FN", label: "Finnish" },
-  // ];
 
-  const handleChange = (e: any) => {
-    console.log(e);
+  // Browser Language
+
+  const [languageContainer, setLanguageContainer] = useState(false);
+  const [selectedLanguagesDown, setSelectedLanguagesDown] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(browserLanguages);
+
+  const openLanguageContainer = () => {
+    setLanguageContainer(!languageContainer);
   };
 
+  const downButton = () => {
+    setSelectedLanguagesDown(!selectedLanguagesDown);
+  };
+
+  const selectLanguage = (clickedItem: IClickedItem) => {
+    setSelectedLanguage((prev) =>
+      prev.map((item) =>
+        item.id === clickedItem.id
+          ? { ...item, isSelected: !item.isSelected }
+          : item
+      )
+    );
+  };
+
+  const [isCheckedLanguage, setIsCheckedLanguage] = useState(false);
+  const [isCheckedAllLanguages, setIsCheckedAllLanguages] = useState(false);
+
+  const selectAllLanguages = () => {
+    setSelectedLanguage((prev) =>
+      prev.map((item) =>
+        item.isSelected === false ? { ...item, isSelected: true } : item
+      )
+    );
+
+    setIsCheckedAllLanguages(!isCheckedAllLanguages);
+    if (isCheckedAllLanguages) {
+      setIsCheckedLanguage(false);
+      clearAllLanguages();
+    } else {
+      setIsCheckedLanguage(true);
+    }
+  };
+
+  const clearAllLanguages = () => {
+    setIsCheckedLanguage(false);
+    setSelectedLanguage((prev) =>
+      prev.map((item) =>
+        item.isSelected === true ? { ...item, isSelected: false } : item
+      )
+    );
+    setIsCheckedAllLanguages(false);
+  };
   return (
     <div className={styles.targetting}>
       <div className={`${styles.titleContainer} mt-24`}>
@@ -217,73 +260,86 @@ function Targetting() {
           <label htmlFor="switch5">Toggle</label>
         </div>
 
-        <Select
-          // options={options}
-          onChange={handleChange}
-          isMulti
-          placeholder="Select"
-        />
+        <button onClick={openLanguageContainer} className={styles.dropdown}>
+          Select
+          <Image src="/down.svg" width={18} height={18} />
+        </button>
 
-        <label htmlFor="q4">
-          <div className={`${styles.dropdown} `}>
-            <span>
-              Select
-              <span>dfdfg</span>
-            </span>
-            <input value="4" type="checkbox" id="q4" />
-            <p className={styles.context}></p>
-          </div>
-        </label>
+        <div
+          className={`${styles.languageContainer} ${
+            languageContainer ? "" : "hidden"
+          }`}
+        >
+          <ul className={styles.ulList}>
+            <li className={styles.allLanguages}>
+              <div className={styles.topping}>
+                <input
+                  type="checkbox"
+                  checked={isCheckedAllLanguages}
+                  onChange={() => selectAllLanguages()}
+                />
+              </div>
+              <p>All Languages</p>
+            </li>
 
-        <div className={styles.dropdown}>
-          <label htmlFor="touch">
-            <span>Select</span>
-          </label>
-          <input type="checkbox" id="touch" />
+            {browserLanguages.map((item) => (
+              <li key={item.id} className={styles.langListElement}>
+                <div className={styles.topping}>
+                  <input
+                    value={item.code}
+                    type="checkbox"
+                    checked={isCheckedLanguage}
+                    onChange={() => selectLanguage(item)}
+                  />
+                </div>
+                <p>{item.language}</p>
+              </li>
+            ))}
 
-          <ul className={styles.slide}>
-            <li>
-              <a href="#">Lorem Ipsum</a>
-            </li>
-            <li>
-              <a href="#">Lorem Ipsum</a>
-            </li>
-            <li>
-              <a href="#">Lorem Ipsum</a>
-            </li>
-            <li>
-              <a href="#">Lorem Ipsum</a>
-            </li>
+            <div className={styles.clearAll}>
+              <button
+                className={styles.clearAllButton}
+                onClick={() => clearAllLanguages()}
+              >
+                Clear All
+              </button>
+              <button className={styles.closeButton}>Close</button>
+            </div>
           </ul>
+        </div>
 
-          <div className={styles.dropdown}>
-            <label htmlFor="touch2">
-              <span>Select</span>
-            </label>
-            <input type="checkbox" id="touch2" />
-
-            <ul className={styles.slide}>
-              <li>
-                <a href="#">Lorem Ipsum</a>
-              </li>
-              <li>
-                <a href="#">Lorem Ipsum</a>
-              </li>
-              <li>
-                <a href="#">Lorem Ipsum</a>
-              </li>
-              <li>
-                <a href="#">Lorem Ipsum</a>
-              </li>
-            </ul>
+        <div
+          className={`${styles.selectedLanguages} ${
+            selectedLanguagesDown ? "h-[36px]" : ""
+          }`}
+        >
+          <div className={styles.languages}>
+            {selectedLanguage.map((item: any) =>
+              item.isSelected === true ? (
+                <button className={styles.languagesButton}>
+                  {item.language}
+                  <span>
+                    <GrFormClose />
+                  </span>
+                </button>
+              ) : (
+                ""
+              )
+            )}
           </div>
+          <button
+            className="w-[10%] flex justify-end h-[36px]"
+            onClick={downButton}
+          >
+            <Image src="/down.svg" width={19} height={19} />
+          </button>
         </div>
       </div>
 
       {/* Exit Intent Targeting */}
       <div className={styles.rules}>
         <div className={styles.rulesSwitch}>
-          <h3>Exit Intent Targeting</h3>
+          <p className={styles.subTitles}>Exit Intent Targeting</p>
           <input className={styles.switch} type="checkbox" id="switch6" />
           <label htmlFor="switch6">Toggle</label>
         </div>

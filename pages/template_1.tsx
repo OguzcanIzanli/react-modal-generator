@@ -56,6 +56,9 @@ function Template_1() {
             : size.medium
         } rounded-[15px] bg-white shadow-xl text-[36px] ${addAfterClass}`}
       >
+        {/* <html lang="en" /> */}
+
+        {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px]">
           <button className="text-black opacity-[0.4] hover:opacity-[0.6]">
             <IoMdCloseCircleOutline />
@@ -63,14 +66,14 @@ function Template_1() {
         </div>
 
         <div className="w-[100%] h-[100%] flex flex-col justify-evenly items-center p-[15px] text-center">
-          {/* Logo */}
+          {/* LOGO OR IMAGE */}
           <div
             className={`h-[90px] w-[90px] flex items-center justify-center opacity-[0.9] rounded-[50%] ${color.bgcolor} ${color.textcolor}`}
           >
             <Image className="text-white" src={logo} width={36} height={44} />
           </div>
 
-          {/* Content */}
+          {/* CONTENT */}
           <h1 className="text-black font-bold leading-[40px] tracking-normal text-[30px]">
             {contents.h1}
           </h1>
@@ -81,7 +84,7 @@ function Template_1() {
             {contents.p}
           </p>
 
-          {/* Button */}
+          {/* BUTTON */}
           <form className="w-[80%] flex justify-between text-[16px]">
             <button className="hover:bg-gray-100 hover:shadow-md w-[165px] h-[48px] border border-solid border-gray-300 rounded-[12px] font-medium tracking-normal">
               {contents.buttonCancel}

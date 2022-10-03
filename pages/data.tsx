@@ -1,5 +1,6 @@
 import Template_1 from "./template_1";
 import Template_2 from "./template_2";
+import Template_3 from "./template_3";
 
 export const templateArray = [
   {
@@ -40,24 +41,80 @@ export const templateArray = [
       image: false,
     },
   },
-  // {
-  //   id: "2",
-  //   set: "1",
-  //   title: "Template 2",
-  //   template: <Template_2 />,
-  //   contents: {
-  //     h1: "Security Code",
-  //     h2: "This code expires in 24 hours",
-  //     p: "Code",
-  //     buttonCancel: "Cancel",
-  //     buttonApply: "Continue",
-  //   },
-  // },
-  //   id: "3",
-  //   set: "1",
-  //   title: "Template 3",
-  //   // template: <Template3 />,
-  // },
+  {
+    id: "2",
+    set: "1",
+    title: "Template 2",
+    template: <Template_2 />,
+    size: {
+      small: "w-[352px] h-[470px]",
+      medium: "w-[440px] h-[550px]",
+      large: "w-[500px] h-[600px]",
+    },
+    contents: {
+      h1: "Install local now",
+      h2: "We’ve gone native, try it!",
+      h3: "",
+      h4: "",
+      h5: "",
+      h6: "",
+      p: "",
+      buttonCancel: "Not now",
+      buttonApply: "Continue",
+    },
+    trfl: {
+      h1: true,
+      h2: true,
+      h3: false,
+      h4: false,
+      h5: false,
+      h6: false,
+      p: false,
+      buttonCancel: true,
+      buttonApply: true,
+    },
+    logoImage: {
+      logo: false,
+      image: true,
+    },
+  },
+  {
+    id: "3",
+    set: "1",
+    title: "Template 3",
+    template: <Template_3 />,
+    size: {
+      small: "w-[342px] h-[470px]",
+      medium: "w-[480px] h-[516px]",
+      large: "w-[520px] h-[590px]",
+    },
+    contents: {
+      h1: "Delete your profile",
+      h2: "Your profile will be automatically deleted after 1 month",
+      h3: "",
+      h4: "",
+      h5: "",
+      h6: "",
+      p: "You won’t be able to access to your profile after 30.08.2021.",
+      buttonCancel: "Delete my profile",
+      buttonApply: "Cancel",
+    },
+    trfl: {
+      h1: true,
+      h2: true,
+      h3: false,
+      h4: false,
+      h5: false,
+      h6: false,
+      p: true,
+      buttonCancel: true,
+      buttonApply: true,
+    },
+    logoImage: {
+      logo: true,
+      image: false,
+    },
+  },
   // {
   //   id: "4",
   //   set: "1",
@@ -256,4 +313,19 @@ export const templateArray = [
   //   title: "Template 36",
   //   // template: <Template36 />,
   // },
+];
+
+export const browserLanguages = [
+  { id: "1", language: "English", code: "en", isSelected: false },
+  { id: "2", language: "French", code: "fr", isSelected: false },
+  { id: "3", language: "German", code: "de", isSelected: false },
+  { id: "4", language: "Polish", code: "pl", isSelected: false },
+  { id: "5", language: "Dutch", code: "nl", isSelected: false },
+  { id: "6", language: "Finnish", code: "fi", isSelected: false },
+  { id: "7", language: "Turkish", code: "tr", isSelected: false },
+  { id: "8", language: "Russian", code: "ru", isSelected: false },
+  { id: "9", language: "Korean", code: "ko", isSelected: false },
+  { id: "10", language: "Tatar", code: "tt", isSelected: false },
+  { id: "11", language: "Spanish", code: "es", isSelected: false },
+  { id: "12", language: "Somali", code: "so", isSelected: false },
 ];

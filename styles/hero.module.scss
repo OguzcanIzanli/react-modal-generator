@@ -33,6 +33,11 @@
     font-size: 18px;
     line-height: 22px;
     letter-spacing: -0.03em;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    background-color: rgba(125, 24, 234, 1);
   }
 
   .heroAdvantages {

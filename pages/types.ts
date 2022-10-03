@@ -140,3 +140,11 @@ export interface IGetCodeContextProps {
   positionForBack: string;
   setPositionForBack: (id: string) => void;
 }
+
+// BROWSER LANGUAGE
+export interface IClickedItem {
+  id?: string;
+  language?: string;
+  code?: string;
+  isSelected?: Boolean;
+}

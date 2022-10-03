@@ -10,7 +10,7 @@ export const LogoContext = createContext<ILogoContextProps>({
 
 export const LogoContextProvider = (props: { children: any }) => {
   const [currentLogo, setCurrentLogo] = useState("/star.svg");
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImage, setCurrentImage] = useState("/img/img1.png");
 
   return (
     <LogoContext.Provider
