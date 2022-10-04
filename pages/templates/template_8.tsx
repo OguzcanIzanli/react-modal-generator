@@ -2,19 +2,17 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../Components/Context";
-import { usePosition } from "../Components/Context";
-import { useColor } from "../Components/Context";
-import { useTemplate } from "../Components/Context";
-import { useLogo } from "../Components/Context";
-import { useTargetting } from "../Components/Context";
+import { useSize } from "../../Components/Context";
+import { usePosition } from "../../Components/Context";
+import { useColor } from "../../Components/Context";
+import { useTemplate } from "../../Components/Context";
+import { useTargetting } from "../../Components/Context";
 
-function Template_1() {
+function Template_8() {
   const { sizeTemp } = useSize();
   const { position } = usePosition();
   const { color } = useColor();
   const { contents, size } = useTemplate();
-  const { logo } = useLogo();
   const { device, seconds, scroll } = useTargetting();
 
   // After % Scroll
@@ -54,10 +52,10 @@ function Template_1() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } rounded-[15px] bg-white shadow-xl text-[36px] ${addAfterClass}`}
+        } rounded-[15px] ${
+          color.bgcolor
+        } shadow-xl text-[36px] ${addAfterClass}`}
       >
-        {/* <html lang="en" /> */}
-
         {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px]">
           <button className="text-black opacity-[0.4] hover:opacity-[0.6]">
@@ -66,40 +64,55 @@ function Template_1() {
         </div>
 
         <div className="w-[100%] h-[100%] flex flex-col justify-evenly items-center p-[15px] text-center">
-          {/* LOGO OR IMAGE */}
-          <div
-            className={`h-[90px] w-[90px] flex items-center justify-center opacity-[0.9] rounded-[50%] ${color.bgcolor} ${color.textcolor}`}
-          >
-            <Image className="text-white" src={logo} width={36} height={44} />
-          </div>
-
           {/* CONTENT */}
-          <h1 className="text-black font-bold leading-[40px] tracking-normal text-[30px]">
+          <h1
+            className={`w-[80%] ${color.buttoncolor} font-bold leading-[40px] tracking-normal text-[36px]`}
+          >
             {contents.h1}
           </h1>
-          <h2 className="text-black font-normal leading-[40px] tracking-normal text-[20px]">
+          <h2
+            className={`w-[80%] ${color.buttoncolor} font-normal leading-[40px] tracking-normal text-[24px]`}
+          >
             {contents.h2}
           </h2>
-          <p className="text-black font-normal leading-[16px] tracking-normal text-[16px] rounded-[12px] border border-solid border-gray-300 p-[15px] text-left w-[80%]">
-            {contents.p}
-          </p>
+
+          <input
+            placeholder={contents.h3}
+            className={`${color.bgcolor} ${color.buttoncolor} placeholder:${color.buttoncolor} font-normal leading-[16px] tracking-normal text-[16px] rounded-[12px] border border-solid border-white p-[15px] text-left w-[50%]`}
+          />
+          <div className="flex justify-center">
+            <div className="flex items-center">
+              <input
+                id="default-radio-1"
+                type="radio"
+                value=""
+                name="default-radio"
+                className={`${color.textcolor} bg-gray-100 border-gray-300  dark:bg-gray-700 dark:border-gray-600 focus:ring-0`}
+              />
+              <label
+                htmlFor="default-radio-1"
+                className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              ></label>
+            </div>
+            <h4
+              className={` ${color.buttoncolor} font-normal leading-[16px] tracking-normal text-[14px]`}
+            >
+              {contents.h4}
+            </h4>
+          </div>
 
           {/* BUTTON */}
-          <form className="w-[80%] flex justify-between text-[16px]">
-            <button className="hover:bg-gray-100 hover:shadow-md w-[165px] h-[48px] border border-solid border-gray-300 rounded-[12px] font-medium tracking-normal">
-              {contents.buttonCancel}
-            </button>
+          <form className="w-[80%] text-[16px] flex justify-end">
             <button
-              className={`${color.bgcolor} ${color.buttoncolor} w-[165px] h-[48px] border border-solid border-gray-300 rounded-[12px] font-medium tracking-normal opacity-[0.9] hover:opacity-[1] hover:shadow-md`}
+              className={` bg-white w-[45%] h-[48px] border border-solid border-gray-400 rounded-[12px] font-medium tracking-normal opacity-[0.9] hover:opacity-[1] hover:shadow-md`}
             >
               {contents.buttonApply}
             </button>
           </form>
         </div>
-        <script src="script.js" defer></script>
       </div>
     );
   }
 }
 
-export default Template_1;
+export default Template_8;

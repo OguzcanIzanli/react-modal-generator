@@ -2,19 +2,19 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../Components/Context";
-import { usePosition } from "../Components/Context";
-import { useColor } from "../Components/Context";
-import { useTemplate } from "../Components/Context";
-import { useLogo } from "../Components/Context";
-import { useTargetting } from "../Components/Context";
+import { useSize } from "../../Components/Context";
+import { usePosition } from "../../Components/Context";
+import { useColor } from "../../Components/Context";
+import { useTemplate } from "../../Components/Context";
+import { useLogo } from "../../Components/Context";
+import { useTargetting } from "../../Components/Context";
 
-function Template_3() {
+function Template_2() {
   const { sizeTemp } = useSize();
   const { position } = usePosition();
   const { color } = useColor();
   const { contents, size } = useTemplate();
-  const { logo } = useLogo();
+  const { image } = useLogo();
   const { device, seconds, scroll } = useTargetting();
 
   // After % Scroll
@@ -56,49 +56,42 @@ function Template_3() {
             : size.medium
         } rounded-[15px] bg-white shadow-xl text-[36px] ${addAfterClass}`}
       >
-        {/* <html lang="en" /> */}
-
-        <div className="absolute top-[17px] right-[25px]">
+        {/* CLOSE BUTTON */}
+        <div className="absolute top-[17px] right-[25px] z-10">
           <button className="text-black opacity-[0.4] hover:opacity-[0.6]">
             <IoMdCloseCircleOutline />
           </button>
         </div>
 
-        <div className="w-[100%] h-[100%] flex flex-col justify-evenly items-center p-[30px] text-center">
-          {/* Logo */}
-          <div
-            className={`h-[90px] w-[90px] flex items-center justify-center opacity-[0.9] rounded-[50%] ${color.bgcolor} ${color.textcolor}`}
-          >
-            <Image className="text-white" src={logo} width={36} height={44} />
-          </div>
+        <div className="w-[100%] h-[100%] flex flex-col justify-items-start items-center text-center">
+          {/* IMAGE OR LOGO */}
 
-          {/* Content */}
-          <h1 className="text-black font-bold leading-[40px] tracking-normal text-[30px]">
+          <Image src={image} width={500} height={315} />
+
+          {/* CONTENT */}
+          <h1 className="text-[30px] mt-[5%] text-black font-bold leading-[40px] tracking-normal ">
             {contents.h1}
           </h1>
-          <h2 className="text-black font-normal leading-[25px] tracking-normal text-[20px] w-[80%]">
+
+          <h2 className="text-[20px] mt-[3%] text-black font-normal leading-[40px] tracking-normal ">
             {contents.h2}
           </h2>
-          <p className="text-gray-400 font-normal leading-[18px] tracking-normal text-[16px] p-[15px] text-left w-[80%]">
-            {contents.p}
-          </p>
 
-          {/* Button */}
-          <form className="w-[90%] flex flex-col text-[16px] mt-[3%] items-center">
+          {/* BUTTON */}
+          <form className="w-[80%] mt-[3%] text-[16px] flex flex-col items-center">
             <button
               className={`${color.bgcolor} ${color.buttoncolor} w-[80%] h-[48px] border border-solid border-gray-300 rounded-[12px] font-medium tracking-normal opacity-[0.9] hover:opacity-[1] hover:shadow-md`}
             >
-              {contents.buttonCancel}
-            </button>
-            <button className="hover:bg-gray-100 hover:shadow-md w-[80%] h-[48px] border border-solid border-gray-300 rounded-[12px] font-medium tracking-normal mt-[4%]">
               {contents.buttonApply}
+            </button>
+            <button className="w-[80%] h-[48px] mt-[4%] hover:bg-gray-100 hover:shadow-md  border border-solid border-gray-300 rounded-[12px] font-medium tracking-normal ">
+              {contents.buttonCancel}
             </button>
           </form>
         </div>
-        <script src="script.js" defer></script>
       </div>
     );
   }
 }
 
-export default Template_3;
+export default Template_2;

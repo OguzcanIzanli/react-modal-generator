@@ -7,16 +7,16 @@ import { ITemplate } from "./types";
 function selector() {
   const [page, setPage] = useState("1");
 
-  const { setId, setContents, setTemplate, setTrfl, setLogoImage, setSize } =
+  const { setId, setContents, setTemplate, setLogoImage, setSize, setTrfl } =
     useTemplate();
 
   const cardData = (data: ITemplate) => {
     setId(data.id);
     setContents(data.contents);
     setTemplate(data.template);
-    setTrfl(data.trfl);
     setLogoImage(data.logoImage);
     setSize(data.size);
+    setTrfl(data.trfl);
   };
 
   return (
@@ -56,9 +56,9 @@ function selector() {
                         id: card.id,
                         contents: card.contents,
                         template: card.template,
-                        trfl: card.trfl,
                         logoImage: card.logoImage,
                         size: card.size,
+                        trfl: card.trfl,
                       })
                     }
                   >

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { GrFormClose } from "react-icons/gr";
 import { browserLanguages } from "./data";
 import { useGetCode, useTargetting } from "../Components/Context/";
-import { IClickedItem } from "./types";
+import { IClickedItem, ISelected } from "./types";
 
 function Targetting() {
   // Visitor Device
@@ -84,7 +84,8 @@ function Targetting() {
 
   const [languageContainer, setLanguageContainer] = useState(false);
   const [selectedLanguagesDown, setSelectedLanguagesDown] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(browserLanguages);
+  const [selectedLanguage, setSelectedLanguage] =
+    useState<ISelected>(browserLanguages);
 
   const openLanguageContainer = () => {
     setLanguageContainer(!languageContainer);
@@ -96,7 +97,7 @@ function Targetting() {
 
   const selectLanguage = (clickedItem: IClickedItem) => {
     setSelectedLanguage((prev) =>
-      prev.map((item) =>
+      prev.map((item: ISelected) =>
         item.id === clickedItem.id
           ? { ...item, isSelected: !item.isSelected }
           : item
@@ -104,34 +105,29 @@ function Targetting() {
     );
   };
 
-  const [isCheckedLanguage, setIsCheckedLanguage] = useState(false);
   const [isCheckedAllLanguages, setIsCheckedAllLanguages] = useState(false);
 
   const selectAllLanguages = () => {
     setSelectedLanguage((prev) =>
-      prev.map((item) =>
+      prev.map((item: ISelected) =>
         item.isSelected === false ? { ...item, isSelected: true } : item
       )
     );
-
     setIsCheckedAllLanguages(!isCheckedAllLanguages);
     if (isCheckedAllLanguages) {
-      setIsCheckedLanguage(false);
       clearAllLanguages();
-    } else {
-      setIsCheckedLanguage(true);
     }
   };
 
   const clearAllLanguages = () => {
-    setIsCheckedLanguage(false);
     setSelectedLanguage((prev) =>
-      prev.map((item) =>
+      prev.map((item: ISelected) =>
         item.isSelected === true ? { ...item, isSelected: false } : item
       )
     );
     setIsCheckedAllLanguages(false);
   };
+
   return (
     <div className={styles.targetting}>
       <div className={`${styles.titleContainer} mt-24`}>
@@ -249,7 +245,10 @@ function Targetting() {
           <input className={styles.switch} type="checkbox" id="switch4" />
           <label htmlFor="switch4">Toggle</label>
         </div>
-        <input className={styles.targetingRulesInputs} />
+        <input
+          placeholder="Enter your traffic source domain"
+          className={styles.targetingRulesInputs}
+        />
       </div>
 
       {/* Browser Language */}
@@ -282,13 +281,13 @@ function Targetting() {
               <p>All Languages</p>
             </li>
 
-            {browserLanguages.map((item) => (
+            {browserLanguages.map((item: ISelected) => (
               <li key={item.id} className={styles.langListElement}>
                 <div className={styles.topping}>
                   <input
-                    value={item.code}
+                    id={item.id}
                     type="checkbox"
-                    checked={isCheckedLanguage}
+                    checked={selectedLanguage.isSelected}
                     onChange={() => selectLanguage(item)}
                   />
                 </div>
@@ -314,7 +313,7 @@ function Targetting() {
           }`}
         >
           <div className={styles.languages}>
-            {selectedLanguage.map((item: any) =>
+            {selectedLanguage.map((item: ISelected) =>
               item.isSelected === true ? (
                 <button className={styles.languagesButton}>
                   {item.language}

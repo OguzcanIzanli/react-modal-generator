@@ -4,7 +4,7 @@ import ImageDropzone from "./imageDropzone";
 import { useTemplate } from "../Components/Context";
 
 function Content() {
-  const { contents, setContents, trfl, logoImage } = useTemplate();
+  const { contents, setContents, logoImage, trfl } = useTemplate();
 
   const onChangeInputh1 = (e: any) => {
     setContents({ ...contents, h1: e.target.value });

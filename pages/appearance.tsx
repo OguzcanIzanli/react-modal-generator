@@ -22,7 +22,7 @@ function Appearance() {
 
   const { setSizeTemp } = useSize();
   const { setColor } = useColor();
-  const { logoImage, size } = useTemplate();
+  const { logoImage } = useTemplate();
 
   // const { setPositionForBack } = useGetCode();
   const { setPosition } = usePosition();
@@ -220,7 +220,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-neutral-900",
-                textcolor: "text-black",
+                textcolor: "text-neutral-600",
                 buttoncolor: "text-white",
               },
               clickedColorButton: "black",
@@ -235,7 +235,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-orange-600",
-                textcolor: "text-black",
+                textcolor: "text-orange-900",
                 buttoncolor: "text-white",
               },
               clickedColorButton: "orange",
@@ -250,7 +250,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-gray-600",
-                textcolor: "text-black",
+                textcolor: "text-gray-800",
                 buttoncolor: "text-white",
               },
               clickedColorButton: "gray",
@@ -265,8 +265,8 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-gray-300",
-                textcolor: "text-black",
-                buttoncolor: "text-white",
+                textcolor: "text-gray-600",
+                buttoncolor: "text-black",
               },
               clickedColorButton: "lightGray",
             })
@@ -280,8 +280,8 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-slate-50",
-                textcolor: "text-black",
-                buttoncolor: "text-white",
+                textcolor: "text-slate-400",
+                buttoncolor: "text-black",
               },
               clickedColorButton: "white",
             })

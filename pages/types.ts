@@ -11,6 +11,45 @@ export interface IPosition {
   clickedPositionButton: string;
 }
 
+// TEMPLATE
+export interface ITemplateContextProps {
+  id: string;
+  contents: Contents;
+  template: JSX.Element;
+  trfl: Trfl;
+  logoImage: LogoImage;
+  size: Size;
+  setId: (id: string) => void;
+  setContents: (contents: Contents) => void;
+  setTemplate: (template: JSX.Element) => void;
+  setTrfl: (trfl: Trfl) => void;
+  setLogoImage: (logoImage: LogoImage) => void;
+  setSize: (size: Size) => void;
+}
+
+// TEXT BOOLEAN
+
+export interface Trfl {
+  h1?: boolean;
+  h2?: boolean;
+  h3?: boolean;
+  h4?: boolean;
+  h5?: boolean;
+  h6?: boolean;
+  p?: boolean;
+  buttonCancel?: boolean;
+  buttonApply?: boolean;
+}
+
+export interface ITemplate {
+  id: any;
+  contents: Contents;
+  template?: any;
+  logoImage: LogoImage;
+  size: any;
+  trfl: Trfl;
+}
+
 // SIZE
 export interface ISizeContextProps {
   sizeTemp: string;
@@ -63,31 +102,6 @@ export interface ILogo {
   image: string;
 }
 
-// TEMPLATE
-export interface ITemplateContextProps {
-  id: string;
-  contents: Contents;
-  template: JSX.Element;
-  trfl: Trfl;
-  logoImage: LogoImage;
-  size: Size;
-  setId: (id: string) => void;
-  setContents: (contents: Contents) => void;
-  setTemplate: (template: JSX.Element) => void;
-  setTrfl: (trfl: Trfl) => void;
-  setLogoImage: (logoImage: LogoImage) => void;
-  setSize: (size: Size) => void;
-}
-
-export interface ITemplate {
-  id: string;
-  contents: Contents;
-  template: JSX.Element;
-  trfl: Trfl;
-  logoImage: LogoImage;
-  size: Size;
-}
-
 // TEXT CONTENTS
 
 export interface Contents {
@@ -100,20 +114,6 @@ export interface Contents {
   p?: string;
   buttonCancel?: string;
   buttonApply?: string;
-}
-
-// TEXT BOOLEAN
-
-export interface Trfl {
-  h1?: boolean;
-  h2?: boolean;
-  h3?: boolean;
-  h4?: boolean;
-  h5?: boolean;
-  h6?: boolean;
-  p?: boolean;
-  buttonCancel?: boolean;
-  buttonApply?: boolean;
 }
 
 // LOGO AND IMAGE BOOLEAN
@@ -147,4 +147,12 @@ export interface IClickedItem {
   language?: string;
   code?: string;
   isSelected?: Boolean;
+}
+
+export interface ISelected {
+  [x: string]: any;
+  id: string;
+  language: string;
+  code: string;
+  isSelected: boolean;
 }
