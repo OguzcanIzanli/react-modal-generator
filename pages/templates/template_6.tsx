@@ -2,11 +2,14 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../../Components/Context";
-import { usePosition } from "../../Components/Context";
-import { useColor } from "../../Components/Context";
-import { useTemplate } from "../../Components/Context";
-import { useTargetting } from "../../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useColor,
+  useTemplate,
+  useTargetting,
+  useLogo,
+} from "../../Components/Context";
 
 function Template_6() {
   const { sizeTemp } = useSize();
@@ -52,7 +55,7 @@ function Template_6() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } rounded-[15px] bg-white shadow-xl text-[36px] ${addAfterClass}`}
+        } rounded-[15px] bg-white shadow-xl text-[36px] m-[20px]  ${addAfterClass}`}
       >
         {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px]">
@@ -83,7 +86,7 @@ function Template_6() {
                   type="radio"
                   value=""
                   name="default-radio"
-                  className={`w-4 h-4 ${color.textcolor} bg-gray-100 border-gray-300  dark:bg-gray-700 dark:border-gray-600 focus:ring-0`}
+                  className={`w-4 h-4 ${color.textcolor} bg-gray-100 dark:bg-gray-700 dark:border-gray-600 focus:ring-0`}
                 />
                 <label
                   htmlFor="default-radio-1"

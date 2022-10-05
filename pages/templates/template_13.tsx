@@ -2,12 +2,14 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../../Components/Context";
-import { usePosition } from "../../Components/Context";
-import { useColor } from "../../Components/Context";
-import { useTemplate } from "../../Components/Context";
-import { useLogo } from "../../Components/Context";
-import { useTargetting } from "../../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useColor,
+  useTemplate,
+  useTargetting,
+  useLogo,
+} from "../../Components/Context";
 
 function Template_13() {
   const { sizeTemp } = useSize();
@@ -54,11 +56,11 @@ function Template_13() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } rounded-[15px] shadow-xl text-[36px] ${addAfterClass}`}
+        } rounded-[15px] shadow-xl text-[36px] ${addAfterClass} m-[20px] `}
       >
         {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px] ">
-          <button className="text-black opacity-[0.4] hover:opacity-[0.6]">
+          <button className="text-black opacity-[0.8] hover:opacity-[1]">
             <IoMdCloseCircleOutline />
           </button>
         </div>
@@ -75,12 +77,12 @@ function Template_13() {
 
           {/* CONTENT */}
           <h1
-            className={` ${color.buttoncolor} font-bold leading-[40px] tracking-normal text-[30px]`}
+            className={`${color.buttoncolor} font-bold leading-[40px] tracking-normal text-[30px]`}
           >
             {contents.h1}
           </h1>
           <h2
-            className={` ${color.buttoncolor} font-normal leading-[40px] tracking-normal text-[20px]`}
+            className={`${color.buttoncolor} font-normal leading-[40px] tracking-normal text-[20px]`}
           >
             {contents.h2}
           </h2>

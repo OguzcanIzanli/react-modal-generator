@@ -22,7 +22,7 @@ function selector() {
   return (
     <>
       {/* Modal Card Generator */}
-      <div id="selector" className={styles.modalCardGenerator}>
+      <div className={styles.modalCardGenerator}>
         <div>
           <h1>Modal Card Generator</h1>
 
@@ -33,7 +33,7 @@ function selector() {
           </p>
         </div>
 
-        <div className={styles.selectionTitle}>
+        <div id="selector" className={styles.selectionTitle}>
           <div>1</div>
           <h2>Choose your template</h2>
         </div>

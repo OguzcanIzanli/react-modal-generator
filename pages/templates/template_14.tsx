@@ -8,13 +8,15 @@ import {
   useColor,
   useTemplate,
   useTargetting,
+  useLogo,
 } from "../../Components/Context";
 
-function Template_7() {
+function Template_14() {
   const { sizeTemp } = useSize();
   const { position } = usePosition();
   const { color } = useColor();
   const { contents, size } = useTemplate();
+  const { image } = useLogo();
   const { device, seconds, scroll } = useTargetting();
 
   // After % Scroll
@@ -48,7 +50,7 @@ function Template_7() {
     return (
       <div
         id="Modal"
-        className={`${position ? position : "sticky top-[50px]"} ${
+        className={`${position ? position : "sticky top-[30%]"} ${
           sizeTemp === "small"
             ? size.small
             : sizeTemp === "large"
@@ -67,34 +69,43 @@ function Template_7() {
           </button>
         </div>
 
-        <div className="w-[100%] h-[100%] flex flex-col justify-evenly items-center p-[15px] text-center">
-          {/* CONTENT */}
-          <h1
-            className={`w-[80%] ${color.buttoncolor} font-bold leading-[40px] tracking-normal text-[30px]`}
-          >
-            {contents.h1}
-          </h1>
-          <h2
-            className={`w-[80%] ${color.buttoncolor} font-normal leading-[40px] tracking-normal text-[20px]`}
-          >
-            {contents.h2}
-          </h2>
-
-          {/* BUTTON */}
-          <form className="w-[80%] text-[16px] flex justify-between">
-            <button
-              className={` ${color.buttoncolor} w-[45%] h-[48px] border border-solid border-gray-400 rounded-[12px] font-medium tracking-normal opacity-[0.9] hover:opacity-[1] hover:shadow-md`}
+        <div className="flex h-[100%]">
+          {/* IMAGE OR LOGO */}
+          <div className="p-[5%]">
+            <Image
+              className="rounded-[50%]"
+              src={image}
+              width={100}
+              height={100}
+            />
+          </div>
+          <div className=" w-[70%] flex flex-col justify-evenly my-[5%] text-left">
+            {/* CONTENT */}
+            <h1
+              className={` ${color.buttoncolor} mt-[3%] font-bold leading-[28px] tracking-normal text-[24px]`}
             >
-              {contents.buttonApply}
-            </button>
-            <button className="bg-white hover:bg-gray-100 hover:shadow-md w-[45%] h-[48px] border border-solid border-gray-400 rounded-[12px] font-medium tracking-normal">
-              {contents.buttonCancel}
-            </button>
-          </form>
+              {contents.h1}
+            </h1>
+            <h2
+              className={` ${color.buttoncolor} mt-[3%] opacity-[0.7]  font-normal leading-[20px] tracking-normal text-[18px]`}
+            >
+              {contents.h2}
+            </h2>
+            <h3
+              className={` ${color.buttoncolor} mt-[11%]  font-normal leading-[22px] tracking-normal text-[18px]`}
+            >
+              {contents.h3}
+            </h3>
+            <h4
+              className={` ${color.buttoncolor} mt-[11%] mb-[3%] font-normal leading-[16px] tracking-normal text-[14px]`}
+            >
+              {contents.h4}
+            </h4>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default Template_7;
+export default Template_14;

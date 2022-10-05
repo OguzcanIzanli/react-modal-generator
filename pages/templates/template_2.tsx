@@ -2,12 +2,14 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../../Components/Context";
-import { usePosition } from "../../Components/Context";
-import { useColor } from "../../Components/Context";
-import { useTemplate } from "../../Components/Context";
-import { useLogo } from "../../Components/Context";
-import { useTargetting } from "../../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useColor,
+  useTemplate,
+  useTargetting,
+  useLogo,
+} from "../../Components/Context";
 
 function Template_2() {
   const { sizeTemp } = useSize();
@@ -54,7 +56,7 @@ function Template_2() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } rounded-[15px] bg-white shadow-xl text-[36px] ${addAfterClass}`}
+        } rounded-[15px] bg-white shadow-xl text-[36px]  m-[20px] ${addAfterClass}`}
       >
         {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px] z-10">
@@ -66,7 +68,12 @@ function Template_2() {
         <div className="w-[100%] h-[100%] flex flex-col justify-items-start items-center text-center">
           {/* IMAGE OR LOGO */}
 
-          <Image src={image} width={500} height={315} />
+          <Image
+            className="rounded-t-[15px]"
+            src={image}
+            width={500}
+            height={315}
+          />
 
           {/* CONTENT */}
           <h1 className="text-[30px] mt-[5%] text-black font-bold leading-[40px] tracking-normal ">

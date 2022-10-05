@@ -220,7 +220,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-neutral-900",
-                textcolor: "text-neutral-600",
+                textcolor: "border-neutral-900",
                 buttoncolor: "text-white",
               },
               clickedColorButton: "black",
@@ -235,7 +235,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-orange-600",
-                textcolor: "text-orange-900",
+                textcolor: "border-orange-600",
                 buttoncolor: "text-white",
               },
               clickedColorButton: "orange",
@@ -250,7 +250,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-gray-600",
-                textcolor: "text-gray-800",
+                textcolor: "border-gray-600",
                 buttoncolor: "text-white",
               },
               clickedColorButton: "gray",
@@ -265,7 +265,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-gray-300",
-                textcolor: "text-gray-600",
+                textcolor: "border-gray-300",
                 buttoncolor: "text-black",
               },
               clickedColorButton: "lightGray",
@@ -280,7 +280,7 @@ function Appearance() {
             selectedColor({
               color: {
                 bgcolor: "bg-slate-50",
-                textcolor: "text-slate-400",
+                textcolor: "border-slate-50",
                 buttoncolor: "text-black",
               },
               clickedColorButton: "white",

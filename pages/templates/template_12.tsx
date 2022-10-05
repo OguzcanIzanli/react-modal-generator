@@ -2,12 +2,14 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../../Components/Context";
-import { usePosition } from "../../Components/Context";
-import { useColor } from "../../Components/Context";
-import { useTemplate } from "../../Components/Context";
-import { useLogo } from "../../Components/Context";
-import { useTargetting } from "../../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useColor,
+  useTemplate,
+  useTargetting,
+  useLogo,
+} from "../../Components/Context";
 
 function Template_12() {
   const { sizeTemp } = useSize();
@@ -54,7 +56,7 @@ function Template_12() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } bg-transparent text-[36px] relative ${addAfterClass}`}
+        } bg-transparent text-[36px] relative ${addAfterClass} m-[20px] `}
       >
         {/* CLOSE BUTTON */}
         <div className="absolute top-[18%] right-[-26%] z-10">

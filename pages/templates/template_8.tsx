@@ -2,11 +2,14 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../../Components/Context";
-import { usePosition } from "../../Components/Context";
-import { useColor } from "../../Components/Context";
-import { useTemplate } from "../../Components/Context";
-import { useTargetting } from "../../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useColor,
+  useTemplate,
+  useTargetting,
+  useLogo,
+} from "../../Components/Context";
 
 function Template_8() {
   const { sizeTemp } = useSize();
@@ -54,11 +57,13 @@ function Template_8() {
             : size.medium
         } rounded-[15px] ${
           color.bgcolor
-        } shadow-xl text-[36px] ${addAfterClass}`}
+        } shadow-xl text-[36px] ${addAfterClass} m-[20px] `}
       >
         {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px]">
-          <button className="text-black opacity-[0.4] hover:opacity-[0.6]">
+          <button
+            className={`${color.buttoncolor} opacity-[0.4] hover:opacity-[0.6]`}
+          >
             <IoMdCloseCircleOutline />
           </button>
         </div>

@@ -10,7 +10,7 @@ import {
   useTargetting,
 } from "../../Components/Context";
 
-function Template_7() {
+function Template_15() {
   const { sizeTemp } = useSize();
   const { position } = usePosition();
   const { color } = useColor();
@@ -48,7 +48,7 @@ function Template_7() {
     return (
       <div
         id="Modal"
-        className={`${position ? position : "sticky top-[50px]"} ${
+        className={`${position ? position : "sticky top-[30%]"} ${
           sizeTemp === "small"
             ? size.small
             : sizeTemp === "large"
@@ -67,34 +67,37 @@ function Template_7() {
           </button>
         </div>
 
-        <div className="w-[100%] h-[100%] flex flex-col justify-evenly items-center p-[15px] text-center">
+        <div className="flex flex-col text-center justify-evenly h-[100%] px-[10%] p-[5%] w-[100%]">
           {/* CONTENT */}
-          <h1
-            className={`w-[80%] ${color.buttoncolor} font-bold leading-[40px] tracking-normal text-[30px]`}
-          >
-            {contents.h1}
-          </h1>
-          <h2
-            className={`w-[80%] ${color.buttoncolor} font-normal leading-[40px] tracking-normal text-[20px]`}
-          >
-            {contents.h2}
-          </h2>
 
-          {/* BUTTON */}
-          <form className="w-[80%] text-[16px] flex justify-between">
-            <button
-              className={` ${color.buttoncolor} w-[45%] h-[48px] border border-solid border-gray-400 rounded-[12px] font-medium tracking-normal opacity-[0.9] hover:opacity-[1] hover:shadow-md`}
+          <div className="p-[5%]">
+            <h1
+              className={` ${color.buttoncolor} mt-[3%] font-bold leading-[32px] tracking-normal text-[30px]`}
             >
-              {contents.buttonApply}
-            </button>
-            <button className="bg-white hover:bg-gray-100 hover:shadow-md w-[45%] h-[48px] border border-solid border-gray-400 rounded-[12px] font-medium tracking-normal">
-              {contents.buttonCancel}
-            </button>
-          </form>
+              {contents.h1}
+            </h1>
+          </div>
+          <div className="flex justify-between">
+            <div className="w-[59px] h-[59px] ring-1 hover:ring-offset-2 ring-gray-500 rounded-[50%]">
+              😤
+            </div>
+            <div className="w-[59px] h-[59px] ring-1 hover:ring-offset-2 ring-gray-500 rounded-[50%]">
+              🙁
+            </div>
+            <div className="w-[59px] h-[59px] ring-1 hover:ring-offset-2 ring-gray-500 rounded-[50%]">
+              🙄
+            </div>
+            <div className="w-[59px] h-[59px] ring-1 hover:ring-offset-2 ring-gray-500 rounded-[50%]">
+              😃
+            </div>
+            <div className="w-[59px] h-[59px] ring-1 hover:ring-offset-2 ring-gray-500 rounded-[50%]">
+              😍
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default Template_7;
+export default Template_15;

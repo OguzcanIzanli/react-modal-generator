@@ -2,12 +2,14 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../../Components/Context";
-import { usePosition } from "../../Components/Context";
-import { useColor } from "../../Components/Context";
-import { useTemplate } from "../../Components/Context";
-import { useLogo } from "../../Components/Context";
-import { useTargetting } from "../../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useColor,
+  useTemplate,
+  useTargetting,
+  useLogo,
+} from "../../Components/Context";
 
 function Template_3() {
   const { sizeTemp } = useSize();
@@ -54,7 +56,7 @@ function Template_3() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } rounded-[15px] bg-white shadow-xl text-[36px] ${addAfterClass}`}
+        } rounded-[15px] bg-white shadow-xl text-[36px] m-[20px] ${addAfterClass}`}
       >
         {/* <html lang="en" /> */}
 
@@ -70,7 +72,7 @@ function Template_3() {
           <div
             className={`h-[90px] w-[90px] flex items-center justify-center opacity-[0.9] rounded-[50%] ${color.bgcolor} ${color.textcolor}`}
           >
-            <Image className="text-white" src={logo} width={36} height={44} />
+            <Image className="text-white" src={logo} width={60} height={60} />
           </div>
 
           {/* CONTENT*/}

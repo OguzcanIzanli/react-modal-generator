@@ -2,19 +2,21 @@ import Image from "next/image";
 import { isMobile, isBrowser } from "react-device-detect";
 import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { useSize } from "../../Components/Context";
-import { usePosition } from "../../Components/Context";
-import { useColor } from "../../Components/Context";
-import { useTemplate } from "../../Components/Context";
-import { useLogo } from "../../Components/Context";
-import { useTargetting } from "../../Components/Context";
+import {
+  useSize,
+  usePosition,
+  useColor,
+  useTemplate,
+  useTargetting,
+  useLogo,
+} from "../../Components/Context";
 
 function Template_11() {
   const { sizeTemp } = useSize();
   const { position } = usePosition();
   const { color } = useColor();
   const { contents, size } = useTemplate();
-  const { image } = useLogo();
+  const { logo } = useLogo();
   const { device, seconds, scroll } = useTargetting();
 
   // After % Scroll
@@ -54,7 +56,7 @@ function Template_11() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } rounded-[15px] bg-white shadow-xl text-[36px] flex justify-center ${addAfterClass}`}
+        } rounded-[15px] bg-white shadow-xl text-[36px] flex justify-center ${addAfterClass} m-[20px] `}
       >
         {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px] z-10">
@@ -66,7 +68,7 @@ function Template_11() {
         <div className="w-[94%] mt-[12%] flex flex-col items-center text-center">
           {/* IMAGE OR LOGO */}
 
-          <Image src={image} width={160} height={160} />
+          <Image src={logo} width={160} height={160} />
 
           {/* CONTENT */}
           <h1 className="text-[30px] w-[80%] mt-[7%] text-black font-bold leading-[32px] tracking-normal ">

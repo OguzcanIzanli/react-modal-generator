@@ -8,13 +8,15 @@ import {
   useColor,
   useTemplate,
   useTargetting,
+  useLogo,
 } from "../../Components/Context";
 
-function Template_7() {
+function Template_16() {
   const { sizeTemp } = useSize();
   const { position } = usePosition();
   const { color } = useColor();
   const { contents, size } = useTemplate();
+  const { logo } = useLogo();
   const { device, seconds, scroll } = useTargetting();
 
   // After % Scroll
@@ -54,41 +56,37 @@ function Template_7() {
             : sizeTemp === "large"
             ? size.large
             : size.medium
-        } rounded-[15px] ${
-          color.bgcolor
-        } shadow-xl text-[36px] ${addAfterClass} m-[20px] `}
+        } rounded-[15px] bg-white shadow-xl text-[36px] ${addAfterClass} m-[20px] `}
       >
         {/* CLOSE BUTTON */}
         <div className="absolute top-[17px] right-[25px]">
-          <button
-            className={`${color.buttoncolor} opacity-[0.4] hover:opacity-[0.6]`}
-          >
+          <button className="text-black opacity-[0.4] hover:opacity-[0.6]">
             <IoMdCloseCircleOutline />
           </button>
         </div>
 
         <div className="w-[100%] h-[100%] flex flex-col justify-evenly items-center p-[15px] text-center">
-          {/* CONTENT */}
-          <h1
-            className={`w-[80%] ${color.buttoncolor} font-bold leading-[40px] tracking-normal text-[30px]`}
+          {/* LOGO OR IMAGE */}
+          <div
+            className={`h-[90px] w-[90px] flex items-center justify-center opacity-[0.9] rounded-[50%] ${color.bgcolor} ${color.textcolor}`}
           >
+            <Image className="text-white" src={logo} width={60} height={60} />
+          </div>
+
+          {/* CONTENT */}
+          <h1 className="w-[80%] text-black font-bold leading-[40px] tracking-normal text-[30px]">
             {contents.h1}
           </h1>
-          <h2
-            className={`w-[80%] ${color.buttoncolor} font-normal leading-[40px] tracking-normal text-[20px]`}
-          >
+          <h2 className="w-[80%] text-black font-normal leading-[40px] tracking-normal text-[20px]">
             {contents.h2}
           </h2>
 
           {/* BUTTON */}
-          <form className="w-[80%] text-[16px] flex justify-between">
+          <form className="w-[80%] flex justify-between text-[16px]">
             <button
-              className={` ${color.buttoncolor} w-[45%] h-[48px] border border-solid border-gray-400 rounded-[12px] font-medium tracking-normal opacity-[0.9] hover:opacity-[1] hover:shadow-md`}
+              className={`${color.bgcolor} ${color.buttoncolor} w-[100%] h-[48px] border border-solid border-gray-300 rounded-[12px] font-medium tracking-normal opacity-[0.9] hover:opacity-[1] hover:shadow-md`}
             >
               {contents.buttonApply}
-            </button>
-            <button className="bg-white hover:bg-gray-100 hover:shadow-md w-[45%] h-[48px] border border-solid border-gray-400 rounded-[12px] font-medium tracking-normal">
-              {contents.buttonCancel}
             </button>
           </form>
         </div>
@@ -97,4 +95,4 @@ function Template_7() {
   }
 }
 
-export default Template_7;
+export default Template_16;
