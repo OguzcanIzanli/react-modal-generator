@@ -1,5 +1,5 @@
 import styles from "../styles/appearance.module.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import LogoDropzone from "./logoDropzone";
 
 import {
@@ -214,7 +214,9 @@ function Appearance() {
       <div className={styles.colorButtonsContainer}>
         <button
           className={`${
-            colorSelect === "black" ? styles.colorSelectClicked : ""
+            colorSelect === "black"
+              ? "outline outline-4 outline-neutral-600"
+              : ""
           }`}
           onClick={() =>
             selectedColor({
@@ -229,7 +231,9 @@ function Appearance() {
         ></button>
         <button
           className={`${
-            colorSelect === "orange" ? styles.colorSelectClicked : ""
+            colorSelect === "orange"
+              ? "outline outline-4 outline-orange-400"
+              : ""
           }`}
           onClick={() =>
             selectedColor({
@@ -244,7 +248,7 @@ function Appearance() {
         ></button>
         <button
           className={`${
-            colorSelect === "gray" ? styles.colorSelectClicked : ""
+            colorSelect === "gray" ? "outline outline-4 outline-gray-400" : ""
           }`}
           onClick={() =>
             selectedColor({
@@ -259,7 +263,9 @@ function Appearance() {
         ></button>
         <button
           className={`${
-            colorSelect === "lightGray" ? styles.colorSelectClicked : ""
+            colorSelect === "lightGray"
+              ? "outline outline-4 outline-gray-200"
+              : ""
           }`}
           onClick={() =>
             selectedColor({
@@ -274,7 +280,7 @@ function Appearance() {
         ></button>
         <button
           className={`${
-            colorSelect === "white" ? styles.colorSelectClicked : ""
+            colorSelect === "white" ? "outline outline-4 outline-gray-200" : ""
           }`}
           onClick={() =>
             selectedColor({

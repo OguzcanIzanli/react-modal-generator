@@ -28,7 +28,6 @@ export interface ITemplateContextProps {
 }
 
 // TEXT BOOLEAN
-
 export interface Trfl {
   h1?: boolean;
   h2?: boolean;
@@ -89,7 +88,6 @@ export interface Color {
 }
 
 // LOGO
-
 export interface ILogoContextProps {
   logo: string;
   image: string;
@@ -103,7 +101,6 @@ export interface ILogo {
 }
 
 // TEXT CONTENTS
-
 export interface Contents {
   h1?: string;
   h2?: string;
@@ -117,7 +114,6 @@ export interface Contents {
 }
 
 // LOGO AND IMAGE BOOLEAN
-
 export interface LogoImage {
   logo?: boolean;
   image?: boolean;

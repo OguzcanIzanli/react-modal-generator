@@ -6,7 +6,6 @@ import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
 import { useLogo } from "../Components/Context";
-import { useTemplate } from "../Components/Context";
 
 function LogoDropzone() {
   const { setLogo } = useLogo();

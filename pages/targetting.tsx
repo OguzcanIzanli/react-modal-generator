@@ -110,13 +110,17 @@ function Targetting() {
   const selectAllLanguages = () => {
     setSelectedLanguage((prev) =>
       prev.map((item: ISelected) =>
-        item.isSelected === false ? { ...item, isSelected: true } : item
+        item.isSelected === false
+          ? { ...item, isSelected: true }
+          : { ...item, isSelected: false }
       )
     );
+
     setIsCheckedAllLanguages(!isCheckedAllLanguages);
     if (isCheckedAllLanguages) {
       clearAllLanguages();
     }
+    console.log(selectedLanguage);
   };
 
   const clearAllLanguages = () => {
@@ -281,13 +285,13 @@ function Targetting() {
               <p>All Languages</p>
             </li>
 
-            {browserLanguages.map((item: ISelected) => (
+            {selectedLanguage.map((item: ISelected) => (
               <li key={item.id} className={styles.langListElement}>
                 <div className={styles.topping}>
                   <input
                     id={item.id}
                     type="checkbox"
-                    checked={selectedLanguage.isSelected}
+                    checked={item.isSelected}
                     onChange={() => selectLanguage(item)}
                   />
                 </div>
@@ -302,7 +306,12 @@ function Targetting() {
               >
                 Clear All
               </button>
-              <button className={styles.closeButton}>Close</button>
+              <button
+                className={styles.closeButton}
+                onClick={openLanguageContainer}
+              >
+                Close
+              </button>
             </div>
           </ul>
         </div>
@@ -315,7 +324,10 @@ function Targetting() {
           <div className={styles.languages}>
             {selectedLanguage.map((item: ISelected) =>
               item.isSelected === true ? (
-                <button className={styles.languagesButton}>
+                <button
+                  className={styles.languagesButton}
+                  onClick={() => selectLanguage(item)}
+                >
                   {item.language}
                   <span>
                     <GrFormClose />

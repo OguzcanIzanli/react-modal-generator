@@ -31,14 +31,9 @@ function SettingsAndCode() {
         <div className={styles.topping}>
           <input
             type="checkbox"
-            // id="topping1"
-            // name="topping1"
-            value="Paneer"
             checked={isCheckedSub}
             onChange={handleOnChangeSub}
           />
-
-          {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
         </div>
         <p className={styles.p}>Send form submissions</p>
       </div>
@@ -47,14 +42,10 @@ function SettingsAndCode() {
         <div className={styles.topping}>
           <input
             type="checkbox"
-            // id="topping1"
-            // name="topping1"
             value="Paneer"
             checked={isCheckedData}
             onChange={handleOnChangeData}
           />
-
-          {/* <div className="result">{isChecked ? "Y" : "N"}.</div> */}
         </div>
         <p className={styles.p}>Send click data</p>
       </div>
@@ -62,7 +53,7 @@ function SettingsAndCode() {
       <button className={styles.getCodeButton}>Get Your Code</button>
 
       <div className={styles.codeBox}>
-        <p className={styles.code}>Code</p>
+        <p className={styles.code}></p>
         <div>
           <button className={styles.copyCodeButton}>Copy the code</button>
         </div>
