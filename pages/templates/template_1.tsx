@@ -10,6 +10,7 @@ import {
   useTargetting,
   useLogo,
 } from "../../Components/Context";
+
 function Template_1() {
   const { sizeTemp } = useSize();
   const { position } = usePosition();
@@ -18,12 +19,11 @@ function Template_1() {
   const { logo } = useLogo();
   const { device, seconds, scroll } = useTargetting();
 
-  // After % Scroll
   const [addAfterClass, setAddAfterClass] = useState("hidden");
 
+  // After % Scroll
   function scrollPosition(scrollPos: any) {
-    // console.log("scroll pos", scrollPos);
-    // console.log("scroll", Number(scroll));
+    console.log("Scroll position", scrollPos);
     scrollPos > Number(scroll) ? setAddAfterClass("") : "";
   }
 
@@ -34,14 +34,15 @@ function Template_1() {
       ); // scroll position divided by body height
     });
   });
+  // After % Scroll
 
   // After X Seconds
-
-  function afterSeconds() {
+  const afterSeconds = () => {
     setAddAfterClass("");
-  }
-  setTimeout(afterSeconds, Number(seconds));
-  // console.log(Number(seconds), "saniye sonra açılacak.");
+  };
+  setTimeout(afterSeconds, Number(seconds) * 1000);
+  console.log(Number(seconds), "saniye sonra açılacak.");
+  // After X Seconds
 
   if (
     device === "isMobile" ? isMobile : device === "isBrowser" ? isBrowser : true

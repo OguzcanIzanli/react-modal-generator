@@ -11,16 +11,16 @@ function Targetting() {
   // Visitor Device
   const [isCheckedDesktop, setIsCheckedDesktop] = useState(false);
   const [isCheckedMobile, setIsCheckedMobile] = useState(false);
-
   const [isVisitorDevice, setIsVisitorDevice] = useState(false);
 
   const { setDeviceForBack } = useGetCode();
+  const { setDevice } = useTargetting();
 
   const handleOnChangeDesktop = () => {
     setIsCheckedDesktop(!isCheckedDesktop);
     if (isCheckedDesktop === false) {
       setIsCheckedMobile(false);
-      setDeviceForBack("isBrowser");
+      setDevice("isBrowser");
     }
   };
 
@@ -28,27 +28,26 @@ function Targetting() {
     setIsCheckedMobile(!isCheckedMobile);
     if (isCheckedMobile === false) {
       setIsCheckedDesktop(false);
-      return setDeviceForBack("isMobile");
+      return setDevice("isMobile");
     }
-    setDeviceForBack("");
+    setDevice("");
   };
 
   const visitorDevice = () => {
     setIsVisitorDevice(!isVisitorDevice);
     isVisitorDevice
-      ? setDeviceForBack("")
+      ? setDevice("")
       : isCheckedMobile
-      ? setDeviceForBack("isMobile")
+      ? setDevice("isMobile")
       : isCheckedDesktop
-      ? setDeviceForBack("isBrowser")
+      ? setDevice("isBrowser")
       : "";
   };
-
-  const { setSeconds, setScroll } = useTargetting();
 
   // After X Seconds
   const [isAfterXSeconds, setIsAfterXSeconds] = useState(false);
   const [secondsInput, setSecondsInput] = useState("");
+  const { setSeconds, setScroll, seconds } = useTargetting();
 
   const afterXSeconds = () => {
     setIsAfterXSeconds(!isAfterXSeconds);

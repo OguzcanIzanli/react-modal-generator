@@ -9,7 +9,7 @@ export const LogoContext = createContext<ILogoContextProps>({
 });
 
 export const LogoContextProvider = (props: { children: any }) => {
-  const [currentLogo, setCurrentLogo] = useState("/github.png");
+  const [currentLogo, setCurrentLogo] = useState("/bolt.svg");
   const [currentImage, setCurrentImage] = useState("/cover.png");
 
   return (
